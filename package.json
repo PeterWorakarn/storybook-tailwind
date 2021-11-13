@@ -22,7 +22,8 @@
     "build:tailwind": "postcss src/base.css -o src/tailwind.css",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 5000"
+    "storybook": "start-storybook -p 5000",
+    "build-storybook": "build-storybook -s public",
   },
   "eslintConfig": {
     "extends": [
