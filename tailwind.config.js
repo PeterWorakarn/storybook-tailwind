@@ -5,7 +5,17 @@ module.exports = {
     extend: {},
   },
   variants: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: {
+          red: '#E53E51',
+          pink: '#FFA494',
+          blue: '#2955F4',
+          aqua: '#32B0C7',
+          navy: '#212339',
+        },
+      }
+    },
   },
   plugins: [],
 }
