@@ -2,7 +2,7 @@
 - [x] Button 
 - [x] FAB
 - [x] Header
-- [ ] Tags
+- [x] Tags
 - [ ] InputField
 - [ ] Card
 - [ ] Dropdown

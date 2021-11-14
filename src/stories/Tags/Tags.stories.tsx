@@ -1,6 +1,5 @@
 /* eslint-disable import/no-anonymous-default-export */
 import React from "react";
-import { withKnobs, text } from "@storybook/addon-knobs";
 import { Tags } from "./Tags";
 import { HiHashtag } from "react-icons/hi";
 import { action } from "@storybook/addon-actions";
@@ -9,9 +8,6 @@ import { action } from "@storybook/addon-actions";
 export default {
   title: "Component/Tags",
   component: Tags,
-  decorators: [
-    withKnobs
-  ],
 };
 
 export const Tag = () => {
