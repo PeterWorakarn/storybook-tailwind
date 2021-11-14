@@ -5,3 +5,7 @@
 .primary-red-gradient {
   @apply text-white bg-gradient-to-r from-red-500 to-red-300;
 }
+
+input.checkboxFilter:checked ~ .chip {
+  @apply bg-gradient-to-r from-red-500 to-red-300 text-white border-none;
+}
