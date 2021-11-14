@@ -7,6 +7,15 @@ module.exports = {
     '@storybook/addon-actions/register',
     '@storybook/addon-knobs/register',
     '@storybook/addon-notes/register',
+    {
+      name: '@storybook/addon-storysource',
+      options: {
+        loaderOptions: {
+          prettierConfig: { printWidth: 80, singleQuote: false },
+          injectStoryParameters: true,
+        },
+      },
+    },
   ],
   webpackFinal: async config => {
     config.module.rules = [
@@ -24,7 +33,7 @@ module.exports = {
         ]
       }
     ],
-    config.resolve.extensions.push('.ts', '.tsx');
+      config.resolve.extensions.push('.ts', '.tsx');
     return config;
   },
 };

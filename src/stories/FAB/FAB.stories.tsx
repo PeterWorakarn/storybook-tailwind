@@ -9,7 +9,7 @@ import { PositionType } from "../../constant-enum-types";
 
 
 export default {
-  title: "Floating Action Button",
+  title: "Component/Floating Action Button",
   component: FAB,
   decorators: [
     withKnobs

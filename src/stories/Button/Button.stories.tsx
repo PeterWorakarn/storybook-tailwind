@@ -9,7 +9,7 @@ import { HiBeaker } from 'react-icons/hi';
 
 
 export default {
-  title: "Button",
+  title: "Component/Button",
   component: Button,
   decorators: [
     withKnobs

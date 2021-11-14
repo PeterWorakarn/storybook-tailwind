@@ -5,7 +5,7 @@ import { Header } from "./Header";
 
 
 export default {
-  title: "Header",
+  title: "Component/Header",
   component: Header,
   decorators: [
     withKnobs
