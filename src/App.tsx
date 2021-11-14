@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from './components/Button';
+import { Button } from './stories/Button';
 import logo from './logo.svg';
 import './App.css';
 import './tailwind.css';
