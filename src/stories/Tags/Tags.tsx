@@ -10,7 +10,7 @@ type TagsTypes = {
 }
 
 export const Tags: FC<TagsTypes> = (props) => {
-  const [current, setCurrent] = useState('');
+  const [current, setCurrent] = useState(props.items[0].title);
   const onSelectHandler = (value: string) => {
     setCurrent(value);
     props.onSelect(value);

@@ -1,7 +1,7 @@
 /* eslint-disable import/no-anonymous-default-export */
 import React from "react";
 import { Tags } from "./Tags";
-import { HiHashtag } from "react-icons/hi";
+import { HiChip } from "react-icons/hi";
 import { action } from "@storybook/addon-actions";
 
 
@@ -29,15 +29,15 @@ export const Tag = () => {
 export const TagWithIcon = () => {
   const items = [
     {
-      icon: <HiHashtag />,
+      icon: <HiChip />,
       title: 'AAA'
     },
     {
-      icon: <HiHashtag />,
+      icon: <HiChip />,
       title: 'BBB'
     },
     {
-      icon: <HiHashtag />,
+      icon: <HiChip />,
       title: 'CCC'
     },
   ]

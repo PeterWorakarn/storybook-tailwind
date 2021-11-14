@@ -6,6 +6,7 @@ module.exports = {
   addons: [
     '@storybook/addon-actions/register',
     '@storybook/addon-docs',
+    '@storybook/addon-postcss',
     {
       name: '@storybook/addon-storysource',
       options: {
