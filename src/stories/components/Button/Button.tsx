@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { VariantType } from '../../../constant-enum-types';
 import '../../../base.css'
+import { HiBeaker } from 'react-icons/hi';
 
 type ButtonTypes = {
   label: string;
@@ -19,6 +20,7 @@ const FULL = 'w-full'
 
 
 export const Button:FC<ButtonTypes> = (props) => {
+
   const variant = (type: VariantType) => {
     const key = type;
     switch (key) {
@@ -39,13 +41,13 @@ export const Button:FC<ButtonTypes> = (props) => {
       onClick={props.onClick}
       className={`
         ${BASE_BUTTON} 
-        ${variant(props.variant)}
+        ${variant(props.variant ? props.variant : VariantType.PRIMARY )}
         ${props.isFull ? FULL : NORMAL} 
         ${props.isRounded ? ROUNDED : NOT_SO_ROUND}
         `}
     >
-      {props.icon && props.icon}
-      <span>{props.label}</span>
+      {props.icon ? props.icon : <HiBeaker className="w-4 h-4" />}
+      <span>{props.label ? props.label : 'See now'}</span>
     </button>
   )
 };

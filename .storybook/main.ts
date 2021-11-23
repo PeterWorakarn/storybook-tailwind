@@ -4,6 +4,7 @@ module.exports = {
     '../src/stories/**/*.stories.mdx',
   ],
   addons: [
+    '@storybook/addon-essentials',
     '@storybook/addon-actions/register',
     '@storybook/addon-docs',
     '@storybook/addon-postcss',
