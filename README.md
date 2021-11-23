@@ -3,7 +3,8 @@
 - [x] FAB
 - [x] Header
 - [x] Tags
-- [ ] InputField
+- [x] InputField
+- [ ] Lotties
 - [ ] Card
 - [ ] Dropdown
 - [ ] TagsInput
