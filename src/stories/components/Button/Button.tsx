@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { VariantType } from '../../constant-enum-types';
-import '../../base.css'
+import { VariantType } from '../../../constant-enum-types';
+import '../../../base.css'
 
 type ButtonTypes = {
   label: string;

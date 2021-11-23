@@ -4,7 +4,7 @@ import { Meta } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { HiHashtag } from 'react-icons/hi';
 import { FAB } from "./FAB";
-import { PositionType } from "../../constant-enum-types";
+import { PositionType } from "../../../constant-enum-types";
 
 
 export default {

@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import '../../base.css';
+import '../../../base.css';
 
 type TagsTypes = {
   items: {
@@ -43,7 +43,7 @@ export const Tags: FC<TagsTypes> = (props) => {
                 onChange={() => onSelectHandler(tag.title)}
               />}
 
-            <div className="chip flex gap-1 justify-center items-center transition-colors border-2 dark:border-none border-gray-100 cursor-pointer text-gray-500 dark:text-typo-minor dark:border-typo-minor py-0.5 px-4 rounded-md">
+            <div className="transition-all duration-100 ease-out chip flex gap-1 justify-center items-center border-none dark:border-none bg-gray-100 border-gray-100 cursor-pointer text-gray-500 dark:text-typo-minor dark:border-typo-minor py-0.5 px-4 rounded-md">
               {tag.icon}{tag.title}
             </div>
           </label>

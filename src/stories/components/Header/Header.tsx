@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import '../../base.css'
+import '../../../base.css'
 
 type HeaderTypes = {
   borderColor: string;

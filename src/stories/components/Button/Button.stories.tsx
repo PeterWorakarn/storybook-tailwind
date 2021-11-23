@@ -3,7 +3,7 @@ import React from "react";
 import { Button } from './Button';
 import { Meta } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { VariantType } from "../../constant-enum-types";
+import { VariantType } from "../../../constant-enum-types";
 import { HiBeaker } from 'react-icons/hi';
 
 

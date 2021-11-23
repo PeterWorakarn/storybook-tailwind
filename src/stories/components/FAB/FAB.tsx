@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { PositionType } from '../../constant-enum-types';
-import '../../base.css'
+import { PositionType } from '../../../constant-enum-types';
+import '../../../base.css'
 
 type FABTypes = {
   label: string;
