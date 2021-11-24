@@ -12,7 +12,7 @@ type ButtonTypes = {
   onClick(): void;
 }
 
-const BASE_BUTTON = 'py-1 px-4 inline-flex justify-center items-center gap-2 outline-none font-semibold uppercase'
+const BASE_BUTTON = 'transition-all duration-75 ease-in opacity-75 hover:opacity-100 py-1 px-4 inline-flex justify-center items-center gap-2 outline-none font-semibold uppercase'
 const ROUNDED = 'rounded-full'
 const NOT_SO_ROUND = 'rounded-lg'
 const NORMAL = 'w-auto'

@@ -8,6 +8,10 @@
 - [x] Lotties
 - [x] Switch
 - [x] TabToggle
+- [ ] Dropdown
+- [ ] Modal
+- [ ] Table
+- [ ] TagsInput
 - [ ] Date Picker
 - [ ] Checkbox
 - [ ] Progress bar
@@ -19,11 +23,7 @@
 - [ ] Tab bar
 - [ ] Skeleton Loading
 - [ ] Search API with Debounce
-- [ ] Dropdown
-- [ ] TagsInput
-- [ ] Modal
 - [ ] Accordian
-- [ ] Table
 - [ ] Skeleton
 - [ ] OTP
 - [ ] Carousal

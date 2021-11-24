@@ -27,7 +27,7 @@ export const FAB:FC<FABTypes> = (props) => {
     }
   }
   return (
-    <button id={props.name ? props.name : 'FAB'} type="button" onClick={props.onClick} className={`${position(props.position ? props.position : PositionType.BOTTOM_RIGHT)} fixed z-50 bg-opacity-75 grid place-items-center w-8 h-8 bg-white rounded-full hover:bg-white active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none`}>
+    <button id={props.name ? props.name : 'FAB'} type="button" onClick={props.onClick} className={`${position(props.position ? props.position : PositionType.BOTTOM_RIGHT)} fixed z-50 bg-opacity-75 grid place-items-center w-8 h-8 bg-red-500 text-white rounded-full hover:bg-red-500 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none`}>
       {props.icon ? props.icon : <HiHashtag />}
       <span className="sr-only">{props.name ? props.name : 'FAB'}</span>
     </button>
