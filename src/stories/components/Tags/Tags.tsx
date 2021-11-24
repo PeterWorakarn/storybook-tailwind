@@ -24,26 +24,16 @@ export const Tags: FC<TagsTypes> = (props) => {
       }) => {
         return (
           <label htmlFor={tag.title} key={tag.title}>
-            {current === tag.title ?
-              <input
-                type="radio"
-                className="checkboxFilter sr-only"
-                id={tag.title}
-                checked
-                name="tags"
-                value={tag.title}
-                onChange={() => onSelectHandler(tag.title)}
-              /> :
-              <input
-                type="radio"
-                className="checkboxFilter sr-only"
-                id={tag.title}
-                name="tags"
-                value={tag.title}
-                onChange={() => onSelectHandler(tag.title)}
-              />}
-
-            <div className="transition-all duration-100 ease-out chip flex gap-1 justify-center items-center border-none dark:border-none bg-gray-100 border-gray-100 cursor-pointer text-gray-500 dark:text-typo-minor dark:border-typo-minor py-0.5 px-4 rounded-md">
+            <input
+              type="radio"
+              className="checkboxFilter sr-only"
+              id={tag.title}
+              checked={current === tag.title}
+              name="tags"
+              value={tag.title}
+              onChange={() => onSelectHandler(tag.title)}
+            />
+            <div className="transition-all duration-100 ease-out chip flex gap-1 justify-center items-center border-none dark:border-none cursor-pointer dark:text-typo-minor dark:border-typo-minor py-0.5 px-4 rounded-md">
               {tag.icon}{tag.title}
             </div>
           </label>
