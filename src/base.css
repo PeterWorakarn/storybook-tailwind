@@ -6,8 +6,11 @@
   @apply text-white bg-gradient-to-r from-red-500 to-red-300;
 }
 
+input.checkboxFilter ~ .chip {
+  @apply opacity-75 bg-gradient-to-r from-gray-100 to-gray-100 text-gray-500 border-none;
+}
 input.checkboxFilter:checked ~ .chip {
-  @apply bg-gradient-to-r from-red-500 to-red-300 text-white border-none;
+  @apply opacity-100 bg-gradient-to-r from-red-500 to-red-300 text-white border-none;
 }
 
 input.toggle-checkbox:checked {
