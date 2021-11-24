@@ -21,16 +21,16 @@ export const InputPasswordToggle: FC<InputPasswordToggleTypes> = (props) => {
   return (
     <div className="input">
       <div className="flex justify-between items-baseline">
-        <label className="input__label capitalize font-semibold text-lg" htmlFor={`${props.name}`}>
-          <p>{props.label}{props.isRequired && <i className="not-italic text-red-500">*</i>}</p>
+        <label className="input__label capitalize font-semibold text-lg" htmlFor={`${props.name ? props.name : 'password'}`}>
+          <p>{props.label ? props.label : 'password'}{props.isRequired && <i className="not-italic text-red-500">*</i>}</p>
         </label>
         {props.isError && <HiExclamationCircle className="text-red-500 w-4 h-4" />}
       </div>
       <div className="input__field relative">
         <input
           className="border border-gray-200 rounded-lg py-0.5 pl-2.5 pr-8 my-1 w-full text-black outline-none"
-          id={props.name}
-          name={props.name}
+          id={props.name ? props.name : 'password'}
+          name={props.name ? props.name : 'password'}
           value={value}
           type={toggle ? 'text' : 'password'}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChangeHandler(e.target.value)}

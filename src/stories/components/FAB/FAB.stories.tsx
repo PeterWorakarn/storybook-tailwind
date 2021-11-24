@@ -8,31 +8,21 @@ import { PositionType } from "../../../constant-enum-types";
 
 
 export default {
-  title: "Component/Floating Action Button",
+  title: "Component/FAB",
   component: FAB,
+  argTypes: {
+    name: {
+      name: 'Name',
+      defaultValue: 'FAB',
+      control: { type: 'text' }
+    },
+    position: {
+      name: 'Position',
+      defaultValue: PositionType.BOTTOM_RIGHT,
+      options: [PositionType.BOTTOM_RIGHT, PositionType.BOTTOM_LEFT, PositionType.TOP_LEFT, PositionType.TOP_RIGHT],
+      control: { type: 'select' }
+    },
+  }
 };
 
-export const TopRight = () => {
-  const label = "FAB";
-  return (
-    <FAB position={PositionType.TOP_RIGHT} label={label} icon={<HiHashtag />} onClick={action('clicked')} />
-  )
-};
-export const TopLeft = () => {
-  const label = "FAB";
-  return (
-    <FAB position={PositionType.TOP_LEFT} label={label} icon={<HiHashtag />} onClick={action('clicked')} />
-  )
-};
-export const BottomRight = () => {
-  const label = "FAB";
-  return (
-    <FAB position={PositionType.BOTTOM_RIGHT} label={label} icon={<HiHashtag />} onClick={action('clicked')} />
-  )
-};
-export const BottomLeft = () => {
-  const label = "FAB";
-  return (
-    <FAB position={PositionType.BOTTOM_LEFT} label={label} icon={<HiHashtag />} onClick={action('clicked')} />
-  )
-};
+export const CustomFAB = (args: any) => <FAB {...args} onClick={action('clicked')} />

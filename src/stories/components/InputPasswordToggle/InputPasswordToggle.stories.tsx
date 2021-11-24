@@ -6,17 +6,33 @@ import { InputPasswordToggle } from "./InputPasswordToggle";
 export default {
   title: "Component/InputPasswordToggle",
   component: InputPasswordToggle,
+  argTypes: {
+    label: {
+      name: 'Label',
+      defaultValue: 'text',
+      control: { type: 'text' }
+    },
+    name: {
+      name: 'Name',
+      defaultValue: 'name',
+      control: { type: 'text' }
+    },
+    helper: {
+      name: 'Helper',
+      defaultValue: '',
+      control: { type: 'text' }
+    },
+    isRequired: {
+      name: 'Required',
+      defaultValue: true,
+      control: { type: 'boolean' }
+    },
+    isError: {
+      name: 'Error',
+      defaultValue: true,
+      control: { type: 'boolean' }
+    },
+  }
 };
 
-export const PasswordToggle = () => {
-  return (
-    <InputPasswordToggle 
-      isError
-      isRequired
-      name="text"
-      label="text"
-      helper="just normal text"
-      onChange={action('Typing')}
-    />
-  )
-};
+export const CustomPasswordToggle = (args: any) => <InputPasswordToggle {...args} onChange={action('Typing')} />

@@ -1,11 +1,8 @@
 /* eslint-disable import/no-anonymous-default-export */
 import React from "react";
 import { Button } from './Button';
-import { Meta } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { VariantType } from "../../../constant-enum-types";
-import { HiBeaker } from 'react-icons/hi';
-
 
 export default {
   title: "Component/Button",
@@ -13,25 +10,29 @@ export default {
   argTypes: {
     label: {
       name: 'Label',
+      defaultValue: 'See now',
       control: { type: 'text' }
     },
     variant: {
       name: 'Variant',
+      defaultValue: VariantType.PRIMARY,
       options: [VariantType.PRIMARY, VariantType.SECONDARY, VariantType.TERTIARY, VariantType.GHOST],
       control: { type: 'select' }
     },
     isFull: {
       name: 'Full',
-      control: {type: 'boolean'}
+      defaultValue: false,
+      control: { type: 'boolean' }
     },
     isRounded: {
       name: 'Rounded',
-      control: {type: 'boolean'}
+      defaultValue: false,
+      control: { type: 'boolean' }
     },
   }
 };
 
-export const ButtonMain = (args: any) => <Button {...args} onClick={action('clicked')} />
+export const CustomButton = (args: any) => <Button {...args} onClick={action('clicked')} />
 
 // export const Primary = () => {
 //   const label = "See now";

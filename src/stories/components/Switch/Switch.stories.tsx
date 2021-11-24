@@ -10,8 +10,7 @@ export default {
 };
 
 export const SwitchMain = () => {
-  
   return (
-    <Switch />
+    <Switch name='switch' onStatus={action('Toggle')} />
   )
 };

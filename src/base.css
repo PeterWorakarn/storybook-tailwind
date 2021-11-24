@@ -9,3 +9,20 @@
 input.checkboxFilter:checked ~ .chip {
   @apply bg-gradient-to-r from-red-500 to-red-300 text-white border-none;
 }
+
+input.toggle-checkbox:checked {
+  background-color: #FFF !important;
+  transform: translateX(16px) !important;
+  border-color: #EF4444 !important;
+}
+input.toggle-checkbox {
+  background-color: #FFF !important;
+  transform: translateX(0px) !important;
+  border-color: #e4e4e4 !important;
+}
+input.toggle-checkbox:checked + label.toggle-label {
+  background-color: #EF4444 !important;
+}
+input.toggle-checkbox + label.toggle-label {
+  background-color: #e4e4e4 !important;
+}

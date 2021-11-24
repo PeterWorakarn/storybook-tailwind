@@ -6,8 +6,9 @@
 - [x] Tags
 - [x] InputField
 - [x] Lotties
-- [ ] Date Picker
+- [x] Switch
 - [x] TabToggle
+- [ ] Date Picker
 - [ ] Checkbox
 - [ ] Progress bar
 - [ ] Dark mode
@@ -23,7 +24,6 @@
 - [ ] Modal
 - [ ] Accordian
 - [ ] Table
-- [ ] Switch
 - [ ] Skeleton
 - [ ] OTP
 - [ ] Carousal

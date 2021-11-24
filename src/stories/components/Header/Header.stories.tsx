@@ -5,15 +5,15 @@ import { Header } from "./Header";
 
 export default {
   title: "Component/Header",
-  component: Header,
+  component: Header, 
+  argTypes: {
+    label: {
+      name: 'Label',
+      defaultValue: 'This is Header',
+      control: { type: 'text' }
+    },
+  }
 };
 
-export const HeaderMain = () => {
-  const label = "This is Header";
-  const borderColor = "#FA4D56";
-  return (
-    <Header borderColor={borderColor}>
-      {label}
-    </Header>
-  )
-};
+export const CustomHeader = (args: any) => <Header {...args} />
+
