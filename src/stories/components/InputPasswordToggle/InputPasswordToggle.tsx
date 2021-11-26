@@ -24,7 +24,7 @@ export const InputPasswordToggle: FC<InputPasswordToggleTypes> = (props) => {
         <label className="input__label capitalize font-semibold text-lg" htmlFor={`${props.name ? props.name : 'password'}`}>
           <p>{props.label ? props.label : 'password'}{props.isRequired && <i className="not-italic text-red-500">*</i>}</p>
         </label>
-        {props.isError && <HiExclamationCircle className="text-red-500 w-4 h-4" />}
+        {props.isError && <HiExclamationCircle className="text-red-500 w-4 h-4 mr-1" />}
       </div>
       <div className="input__field relative">
         <input

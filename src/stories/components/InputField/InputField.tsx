@@ -40,7 +40,7 @@ export const InputField: FC<InputFieldTypes> = (props) => {
         <label className="input__label capitalize font-semibold text-lg" htmlFor={`${props.name}`}>
           <p>{props.label ? props.label : 'text'}{props.isRequired && <i className="not-italic text-red-500">*</i>}</p>
         </label>
-        {props.isError && <HiExclamationCircle className="text-red-500 w-4 h-4" />}
+        {props.isError && <HiExclamationCircle className="text-red-500 w-4 h-4 mr-1" />}
       </div>
       <div className="input__field relative">
         <i className="absolute top-2 left-1 text-gray-400">

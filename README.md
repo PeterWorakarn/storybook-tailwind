@@ -8,10 +8,12 @@
 - [x] Lotties
 - [x] Switch
 - [x] TabToggle
+- [x] Table
+- [x] SortedTable
 - [ ] Dropdown
 - [ ] Modal
-- [ ] Table
 - [ ] TagsInput
+- [ ] Dropdown with Search
 - [ ] Date Picker
 - [ ] Checkbox
 - [ ] Progress bar
