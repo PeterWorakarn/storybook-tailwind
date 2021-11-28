@@ -8,15 +8,16 @@ type InputPasswordToggleTypes = {
   label: string;
   isError: boolean;
   isRequired: boolean;
+  setValue: React.Dispatch<React.SetStateAction<string>>;
+  value: string;
   onChange: (value: string) => void;
 }
 
 export const InputPasswordToggle: FC<InputPasswordToggleTypes> = (props) => {
-  const [value, setValue] = useState('');
   const [toggle, setToggle] = useState(false);
-  const onChangeHandler = (value: string) => {
-    setValue(value);
-    props.onChange(value);
+  const onChangeHandler = (newValue: string) => {
+    props.setValue(newValue)
+    props.onChange(newValue);
   }
   return (
     <div className="input">
@@ -31,13 +32,13 @@ export const InputPasswordToggle: FC<InputPasswordToggleTypes> = (props) => {
           className="border border-gray-200 rounded-lg py-0.5 pl-2.5 pr-8 my-1 w-full text-black outline-none"
           id={props.name ? props.name : 'password'}
           name={props.name ? props.name : 'password'}
-          value={value}
+          value={props.value}
           type={toggle ? 'text' : 'password'}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChangeHandler(e.target.value)}
         />
         <i className="absolute top-3 right-1.5 text-gray-400">
           {toggle ? (
-            <HiEyeOff onClick={() => setToggle(!toggle)}  className="w-4 h-4 text-red-500" />
+            <HiEyeOff onClick={() => setToggle(!toggle)} className="w-4 h-4 text-red-500" />
           ) : (
             <HiEye onClick={() => setToggle(!toggle)} className="w-4 h-4 text-red-500" />
           )}

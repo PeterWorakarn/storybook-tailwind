@@ -1,5 +1,5 @@
 /* eslint-disable import/no-anonymous-default-export */
-import React from "react";
+import React, { useState } from "react";
 import { action } from "@storybook/addon-actions";
 import { InputPasswordToggle } from "./InputPasswordToggle";
 
@@ -35,4 +35,8 @@ export default {
   }
 };
 
-export const CustomPasswordToggle = (args: any) => <InputPasswordToggle {...args} onChange={action('Typing')} />
+export const CustomPasswordToggle = (args: any) => {
+  const [value, setValue] = useState('');
+
+  return <InputPasswordToggle value={value} setValue={setValue} {...args} onChange={action('Typing')} />
+}

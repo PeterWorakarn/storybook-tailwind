@@ -1,5 +1,5 @@
 /* eslint-disable import/no-anonymous-default-export */
-import React from "react";
+import React, { useState } from "react";
 import { action } from "@storybook/addon-actions";
 import { InputField } from "./InputField";
 
@@ -46,4 +46,8 @@ export default {
   }
 };
 
-export const CustomInput = (args: any) => <InputField {...args} onChange={action('Typing')} />
+export const CustomInput = (args: any) => {
+  const [value, setValue] = useState('');
+
+  return <InputField value={value}  setValue={setValue} {...args} onChange={action('Typing')} />
+}
