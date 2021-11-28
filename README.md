@@ -10,8 +10,8 @@
 - [x] TabToggle
 - [x] Table
 - [x] SortedTable
+- [x] Modal
 - [ ] Dropdown
-- [ ] Modal
 - [ ] TagsInput
 - [ ] Dropdown with Search
 - [ ] Date Picker
