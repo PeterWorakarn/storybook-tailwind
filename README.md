@@ -36,3 +36,5 @@
 ### Page 
 - [ ] Blog
 - [ ] Archive
+- [ ] Test1
+- [ ] Test2
