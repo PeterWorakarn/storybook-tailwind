@@ -26,3 +26,16 @@ export default {
 };
 
 export const CustomFAB = (args: any) => <FAB {...args} onClick={action('clicked')} />
+export const FABGallery = () => {
+  const name = "FAB";
+  const icon = <HiHashtag className="fab__icon"/>;
+  return (
+    <main className="gallery gallery--row">
+      <FAB name={name} icon={icon} position={PositionType.BOTTOM_LEFT} onClick={action('clicked')} />
+      <FAB name={name} icon={icon} position={PositionType.BOTTOM_RIGHT} onClick={action('clicked')} />
+      <FAB name={name} icon={icon} position={PositionType.TOP_LEFT} onClick={action('clicked')} />
+      <FAB name={name} icon={icon} position={PositionType.TOP_RIGHT} onClick={action('clicked')} />
+
+    </main>
+  )
+}

@@ -49,5 +49,64 @@ export default {
 export const CustomInput = (args: any) => {
   const [value, setValue] = useState('');
 
-  return <InputField value={value}  setValue={setValue} {...args} onChange={action('Typing')} />
+  return <InputField value={value} setValue={setValue} {...args} onChange={action('Typing')} />
+}
+
+export const InputGallery = () => {
+  const [value, setValue] = useState('');
+  const isError = true;
+  const isRequired = true;
+  const name = 'Input'
+  const placeholder = ''
+  const helper = 'Input'
+  const label = 'Input'
+  return (
+    <main className="gallery gallery--col">
+      <InputField
+        type="text"
+        name={name}
+        placeholder={placeholder}
+        helper={helper}
+        label={label}
+        isError={isError}
+        isRequired={isRequired}
+        value={value}
+        setValue={setValue}
+        onChange={action('Typing')} />
+      <InputField
+        type="web"
+        name={name}
+        placeholder={placeholder}
+        helper={helper}
+        label={label}
+        isError={isError}
+        isRequired={isRequired}
+        value={value}
+        setValue={setValue}
+        onChange={action('Typing')} />
+      <InputField
+        type="mail"
+        name={name}
+        placeholder={placeholder}
+        helper={helper}
+        label={label}
+        isError={isError}
+        isRequired={isRequired}
+        value={value}
+        setValue={setValue}
+        onChange={action('Typing')} />
+      <InputField
+        type="password"
+        name={name}
+        placeholder={placeholder}
+        helper={helper}
+        label={label}
+        isError={isError}
+        isRequired={isRequired}
+        value={value}
+        setValue={setValue}
+        onChange={action('Typing')} />
+
+    </main>
+  )
 }
