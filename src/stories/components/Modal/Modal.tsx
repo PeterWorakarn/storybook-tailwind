@@ -8,7 +8,7 @@ import { Button } from '../Button/Button';
 type ModalTypes = {
     header: string;
     isCloseButton: boolean;
-    modal:  boolean;
+    modal: boolean;
     setModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
@@ -21,15 +21,17 @@ export const Modal: FC<ModalTypes> = (props) => {
                 onClick={() => props.setModal(true)}
             />
             {props.modal && (
-                <div className="modal-container z-10 fixed box-border overflow-hidden inset-0 outline-none">
-                    <div className="modal-container__container relative flex h-full w-full justify-center items-center my-10 text-gray-600">
-                        <div style={{ filter: 'blur(8px)' }} onClick={() => props.setModal(false)} className="modal-container__backdrop z-20 bg-gray-200 opacity-75 absolute h-full w-full"></div>
-                        <div className="modal-container__modal z-30 relative w-full max-w-xs max-h-full bg-white rounded-md shadow-sm px-3 pb-3 pt-6 flex flex-col items-center capitalize">
-                            {props.isCloseButton && <div className="absolute cursor-pointer text-red-500 font-medium top-1.5 right-1.5" onClick={() => props.setModal(false)}><HiOutlineX className="w-5 h-5" /></div>}
-                            <h1 className="text-red-500 text-2xl font-medium pb-3 border-b border-gray-200 w-full text-center">
+                <div className="modal__containers">
+                    <div className="modal__container">
+                        <div
+                            // style={{ filter: 'blur(8px)' }} 
+                            onClick={() => props.setModal(false)} className="modal__backdrop"></div>
+                        <div className="modal">
+                            {props.isCloseButton && <div className="modal__close-btn" onClick={() => props.setModal(false)}><HiOutlineX className="w-5 h-5" /></div>}
+                            <h1 className="typo typo--otter font-bold text-red-500 w-full text-left">
                                 {props.header ? props.header : 'This is header'}
                             </h1>
-                            <div className="w-full pt-3">
+                            <div className="w-full typo typo--snail font-normal">
                                 {props.children ? props.children : 'Consectetur est aute consectetur ipsum et adipisicing in mollit. Tempor elit minim do nulla sint sint laboris consectetur .'}
                             </div>
                         </div>
