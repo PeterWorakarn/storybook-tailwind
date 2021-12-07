@@ -107,7 +107,7 @@ const TBodyData = [
     'Credit': 90
   },
 ]
-export const CustomTable = (args: any) => {
+export const PlainTable = (args: any) => {
   return (
     <Table THeadData={THeadValue} {...args}>
       {TBodyData.map((item, index) => {
@@ -135,7 +135,7 @@ export const CustomTable = (args: any) => {
   )
 }
 
-export const CustomSortedTable = (args: any) => {
+export const PlainSortedTable = (args: any) => {
   return (
     <SortedTable THeadData={THeadIconValue} {...args} TBodyData={TBodyData} />
   )
