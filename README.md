@@ -1,20 +1,24 @@
 # TODO 
+// https://vercel.com/design/button
+// https://opensource.adobe.com/spectrum-web-components/components/button/
 ### Components 
-- [x] Button 
-- [x] FAB
-- [x] Header
-- [x] Tags
-- [x] InputField
-- [x] Lotties
-- [x] Switch
-- [x] TabToggle
+- [x] Button ✅
+- [x] FAB ✅
+- [x] Loading ✅
+- [x] Lotties ✅
+- [x] Typo ✅
+- [x] Tags ✅
+- [x] Tabs ✅
+- [x] Switch ✅
+- [x] InputField ✅
+- [x] Modal ✅
+- [ ] Dropdown
+- [ ] Date Picker
+- [ ] PaginatedTable
 - [x] Table
 - [x] SortedTable
-- [x] Modal
-- [ ] Dropdown
 - [ ] TagsInput
 - [ ] Dropdown with Search
-- [ ] Date Picker
 - [ ] Checkbox
 - [ ] Progress bar
 - [ ] Dark mode
