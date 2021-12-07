@@ -2,34 +2,164 @@
 @tailwind components;
 @tailwind utilities;
 
+.center {
+  @apply max-w-xl mx-auto flex justify-center items-center
+}
+.center__item {
+  @apply font-sans w-full flex justify-center items-center p-12 mx-5 my-10 rounded-md shadow-sm bg-gray-50
+}
+
+.gallery {
+  @apply flex gap-2
+}
+.gallery--row {
+  @apply flex-row
+}
+.gallery--col {
+  @apply flex-col
+}
+
 .primary-red-gradient {
   @apply text-white bg-gradient-to-r from-red-500 to-red-300;
 }
 
-input.checkboxFilter ~ .chip {
-  @apply opacity-75 bg-gradient-to-r from-gray-100 to-gray-100 text-gray-500 border-none;
+/* Typo */
+.typo {
+  color: #333;
+  @apply normal-case
 }
-input.checkboxFilter:checked ~ .chip {
+.typo.typo--snail { font-size: 0.875rem; }
+.typo.typo--mouse { font-size: 1rem; }
+.typo.typo--otter { font-size: 1.25rem; }
+.typo.typo--dolphin { font-size: 1.625rem; }
+.typo.typo--hippo { font-size: 2rem; }
+.typo.typo--mammoth { font-size: 3rem; }
+
+/* Button */
+button.btn {
+  @apply text-sm transition-all duration-75 ease-in opacity-75 hover:opacity-100 py-1 px-3 inline-flex justify-center items-center gap-1 outline-none font-medium capitalize
+}
+.btn.btn--rounded {
+  @apply rounded-full
+}
+.btn.btn--square {
+  @apply rounded-md
+}
+.btn.btn--normal {
+  @apply w-auto
+}
+.btn.btn--full {
+  @apply w-full
+}
+.btn.btn--primary {
+  @apply primary-red-gradient shadow
+}
+.btn.btn--secondary {
+  @apply bg-red-500 text-white shadow
+}
+.btn.btn--tertiary {
+  @apply border border-red-500 text-red-500 shadow
+}
+.btn.btn--ghost {
+  @apply text-red-500
+}
+button.btn > .btn__icon {
+  @apply w-4 h-4
+}
+
+
+/* FAB */
+.fab.fab--bl {
+  @apply bottom-2 left-2
+}
+.fab.fab--br {
+  @apply bottom-2 right-2
+}
+.fab.fab--tl {
+  @apply top-2 left-2
+}
+.fab.fab--tr {
+  @apply top-2 right-2
+}
+
+/* Modal */
+.modal__containers { @apply z-10 fixed box-border overflow-hidden inset-0 outline-none}
+.modal__containers .modal__container { @apply relative flex h-full w-full justify-center items-center my-10 text-gray-600}
+.modal__container .modal__backdrop { @apply z-20 bg-gray-700 opacity-20 absolute h-full w-full}
+.modal__containers .modal { @apply  z-30 relative w-full max-w-xs max-h-full bg-white rounded-md shadow p-3 flex flex-col items-center capitalize}
+.modal__containers .modal .modal__close-btn { @apply absolute cursor-pointer text-red-500 font-medium top-1.5 right-1.5}
+
+/* Input */
+.input__container .label__container {
+  @apply flex flex-row justify-between items-center
+}
+.input__container .label__container .label {
+  @apply capitalize font-semibold text-sm
+}
+.input__container .label__container .error {
+  @apply text-red-500 w-4 h-4 mr-1
+}
+.input__container .input__field {
+  @apply relative
+}
+.input__container .input__field .input {
+  @apply text-sm text-black font-medium border border-gray-200 rounded-md py-1 pl-8 pr-3 my-1 w-full  outline-none
+}
+.input__container .input__field .input--non-icon {
+  @apply text-sm text-black font-medium border border-gray-200 rounded-md py-1 px-3 my-1 w-full  outline-none
+}
+.input__container .input__field .password {
+  @apply absolute top-2 right-1.5 text-gray-400
+}
+
+/* Tabs */
+.tabs__container { @apply bg-gray-200 text-xs text-gray-500 leading-none border-2 border-gray-200 rounded-full inline-flex}
+.tab__container { @apply gap-1 inline-flex items-center transition-colors duration-150 ease-in focus:outline-none hover:text-red-500 focus:text-red-500 rounded-full px-3 py-1}
+.tab { @apply text-base uppercase}
+
+/* Chip AKA Tag */
+.tags__container {
+  @apply flex justify-start flex-wrap gap-2 mt-2
+}
+.tags__container .tag__container .tag__status {
+  @apply sr-only
+}
+.tags__container .tag__container .tag {
+  @apply transition-all duration-100 ease-out flex gap-1 justify-center items-center border-none cursor-pointer py-0.5 px-3 rounded-md
+}
+input.tag__status ~ .tag {
+  @apply opacity-75 bg-gradient-to-r from-gray-200 to-gray-200 text-gray-500 border-none;
+}
+input.tag__status:checked ~ .tag {
   @apply opacity-100 bg-gradient-to-r from-red-500 to-red-300 text-white border-none;
 }
 
-input.toggle-checkbox:checked {
+/* Switch */
+.switch__container {
+  @apply relative inline-block w-16 align-middle select-none
+}
+.switch__container .switch {
+  @apply transition-transform duration-75 ease-in  absolute block w-6 h-6 rounded-full  border-2 appearance-none cursor-pointer
+}
+
+.switch__container input.switch:checked {
   background-color: #FFF !important;
   transform: translateX(16px) !important;
   border-color: #EF4444 !important;
 }
-input.toggle-checkbox {
+.switch__container input.switch {
   background-color: #FFF !important;
   transform: translateX(0px) !important;
   border-color: #e4e4e4 !important;
 }
-input.toggle-checkbox:checked + label.toggle-label {
+.switch__container input.switch:checked + label.switch__label {
   background-color: #EF4444 !important;
 }
-input.toggle-checkbox + label.toggle-label {
+.switch__container input.switch + label.switch__label {
   background-color: #e4e4e4 !important;
 }
 
+/* Loading */
 .loading__container {
   display: flex;
   justify-content: center;

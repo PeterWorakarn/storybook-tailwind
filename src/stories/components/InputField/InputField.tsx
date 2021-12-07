@@ -36,19 +36,19 @@ export const InputField: FC<InputFieldTypes> = (props) => {
   }
 
   return (
-    <div className="input">
-      <div className="flex justify-between items-baseline">
-        <label className="input__label capitalize font-semibold text-lg" htmlFor={`${props.name}`}>
+    <div className="input__container">
+      <div className="label__container">
+        <label className="label" htmlFor={`${props.name}`}>
           <p>{props.label ? props.label : 'text'}{props.isRequired && <i className="not-italic text-red-500">*</i>}</p>
         </label>
-        {props.isError && <HiExclamationCircle className="text-red-500 w-4 h-4 mr-1" />}
+        {props.isError && <HiExclamationCircle className="error" />}
       </div>
-      <div className="input__field relative">
+      <div className="input__field">
         <i className="absolute top-2 left-1 text-gray-400">
           {InputIcon(props.type ? props.type : 'text')}
         </i>
         <input
-          className="border border-gray-200 rounded-lg py-0.5 pl-8 pr-2.5 my-1 w-full text-black outline-none"
+          className={`${props.type === 'text' ? "input--non-icon" :"input"}`}
           id={props.name ? props.name : 'text'}
           name={props.name ? props.name : 'text'}
           value={props.value}

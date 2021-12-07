@@ -12,26 +12,26 @@ type ButtonTypes = {
   onClick(): void;
 }
 
-const BASE_BUTTON = 'transition-all duration-75 ease-in opacity-75 hover:opacity-100 py-1 px-4 inline-flex justify-center items-center gap-2 outline-none font-semibold uppercase'
-const ROUNDED = 'rounded-full'
-const NOT_SO_ROUND = 'rounded-lg'
-const NORMAL = 'w-auto'
-const FULL = 'w-full'
+const BASE_BUTTON = 'btn'
+const ROUNDED = 'btn--rounded'
+const NOT_SO_ROUND = 'btn--square'
+const NORMAL = 'btn--normal'
+const FULL = 'btn--full'
 
 
-export const Button:FC<ButtonTypes> = (props) => {
+export const Button: FC<ButtonTypes> = (props) => {
 
   const variant = (type: VariantType) => {
     const key = type;
     switch (key) {
       case VariantType.PRIMARY:
-        return 'primary-red-gradient';
+        return 'btn--primary';
       case VariantType.SECONDARY:
-        return 'bg-red-300 text-white';
+        return 'btn--secondary';
       case VariantType.TERTIARY:
-        return 'border border-red-500 text-red-500';
+        return 'btn--tertiary';
       case VariantType.GHOST:
-        return 'text-red-500';
+        return 'btn--ghost';
       default:
         break;
     }
@@ -41,13 +41,13 @@ export const Button:FC<ButtonTypes> = (props) => {
       onClick={props.onClick}
       className={`
         ${BASE_BUTTON} 
-        ${variant(props.variant ? props.variant : VariantType.PRIMARY )}
+        ${variant(props.variant ? props.variant : VariantType.PRIMARY)}
         ${props.isFull ? FULL : NORMAL} 
         ${props.isRounded ? ROUNDED : NOT_SO_ROUND}
         `}
     >
-      {props.icon ? props.icon : <HiBeaker className="w-4 h-4" />}
-      <span>{props.label ? props.label : 'See now'}</span>
+      {props.icon ? props.icon : <HiBeaker className="btn__icon" />}
+      <span className="btn__label">{props.label ? props.label : 'Upload'}</span>
     </button>
   )
 };

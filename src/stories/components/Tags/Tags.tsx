@@ -17,23 +17,23 @@ export const Tags: FC<TagsTypes> = (props) => {
   }
 
   return (
-    <div className="flex justify-start flex-wrap gap-2 mt-2">
+    <div className="tags__container">
       {props.items.map((tag: {
         icon?: React.ReactElement<any, string | React.JSXElementConstructor<any>> | undefined;
         title: string;
       }) => {
         return (
-          <label htmlFor={tag.title} key={tag.title}>
+          <label className="tag__container" htmlFor={tag.title} key={tag.title}>
             <input
               type="radio"
-              className="checkboxFilter sr-only"
+              className="tag__status sr-only"
               id={tag.title}
               checked={current === tag.title}
               name="tags"
               value={tag.title}
               onChange={() => onSelectHandler(tag.title)}
             />
-            <div className="transition-all duration-100 ease-out chip flex gap-1 justify-center items-center border-none dark:border-none cursor-pointer dark:text-typo-minor dark:border-typo-minor py-0.5 px-4 rounded-md">
+            <div className="tag">
               {tag.icon}{tag.title}
             </div>
           </label>
