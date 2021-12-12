@@ -16,4 +16,12 @@ export enum textTransformType {
   TITLECASE = 'title',
   AUTO = 'auto',
 }
+export enum textSizeType {
+  SNAIL = 'snail',
+  MOUSE = 'mouse',
+  OTTER = 'otter',
+  DOLPHIN = 'dolphin',
+  HIPPO = 'hippo',
+  MAMMOTH = 'mammoth',
+}
 
