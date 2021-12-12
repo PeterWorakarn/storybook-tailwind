@@ -12,7 +12,7 @@
 - [x] Switch ✅
 - [x] InputField ✅
 - [x] Modal ✅
-- [ ] Dropdown
+- [x] Dropdown ✅
 - [ ] Date Picker
 - [ ] PaginatedTable
 - [x] Table
