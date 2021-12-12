@@ -89,6 +89,34 @@ button.btn > .btn__icon {
 .modal__containers .modal { @apply  z-30 relative w-full max-w-xs max-h-full bg-white rounded-md shadow p-3 flex flex-col items-center capitalize}
 .modal__containers .modal .modal__close-btn { @apply absolute cursor-pointer text-red-500 font-medium top-1.5 right-1.5}
 
+/* Dropdown */
+.dropdown__container {
+  @apply inline-block text-left my-1 w-28
+}
+.dropdown__container .dropdown__input {
+  @apply z-0 h-8 inline-flex justify-between items-center w-full px-4 py-0.5 border border-gray-200 bg-white rounded-md focus:outline-none transition-colors
+}
+.dropdown__container .dropdown__input__field {
+  @apply capitalize ml-4 text-sm text-gray-600 text-center pointer-events-none outline-none w-full bg-transparent
+}
+.dropdown__container .dropdown__input__icon {
+  @apply -mr-2 ml-2 h-6 w-6 text-gray-600
+}
+.dropdown__container .dropdown__backdrop {
+  @apply z-10 opacity-0 invisible transition-all duration-300 transform origin-top-right -translate-y-2 scale-95
+}
+.dropdown__container:focus-within .dropdown__backdrop {
+  opacity:1;
+  transform: translate(0) scale(1);
+  visibility: visible;
+}
+.dropdown__container .dropdown__backdrop .dropdown__items { 
+  @apply z-10 overflow-y-auto max-h-44 origin-top-right absolute left-0 mt-1 w-full rounded-md shadow bg-white focus:outline-none
+}
+.dropdown__container .dropdown__backdrop .dropdown__items .dropdown__item {
+  @apply capitalize text-center hover:text-red-500 hover:bg-gray-100 cursor-pointer text-gray-600 block px-4 py-2 text-sm
+}
+
 /* Input */
 .input__container .label__container {
   @apply flex flex-row justify-between items-center
@@ -103,13 +131,45 @@ button.btn > .btn__icon {
   @apply relative
 }
 .input__container .input__field .input {
-  @apply text-sm text-black font-medium border border-gray-200 rounded-md py-1 pl-8 pr-3 my-1 w-full  outline-none
+  @apply text-sm text-black font-medium border border-gray-200 rounded-md py-1 pl-8 pr-3 my-1 w-full   outline-none
 }
 .input__container .input__field .input--non-icon {
   @apply text-sm text-black font-medium border border-gray-200 rounded-md py-1 px-3 my-1 w-full  outline-none
 }
+.input__container .input__field .input--datepicker {
+  @apply text-sm text-black font-medium border border-gray-200 rounded-md py-1 px-3 my-1 w-56  outline-none
+}
 .input__container .input__field .password {
-  @apply absolute top-2 right-1.5 text-gray-400
+  @apply absolute top-3 right-1.5 text-gray-400
+}
+.input__container .input__field .date {
+  @apply absolute top-3 right-1.5 text-gray-400
+}
+
+/* Datepicker */
+.datepicker__backdrop {
+  @apply opacity-0 absolute bg-white z-10 w-full h-full
+}
+.input__container .datepicker__container {
+  @apply transition-all duration-75 bg-white mt-14 rounded-md shadow pl-4 pr-2 py-2 absolute top-0 left-0 w-full
+}
+.input__container .datepicker__container .datepicker__header {
+  @apply flex justify-between items-center mb-2
+}
+.input__container .datepicker__container .datepicker__header .datepicker__month {
+  @apply text-sm font-bold text-gray-800
+}
+.input__container .datepicker__container .datepicker__header .datepicker__year {
+  @apply ml-1 text-sm text-gray-600 font-normal
+}
+.input__container .datepicker__container .datepicker__header .datepicker__icon {
+  @apply w-5 h-5
+}
+.input__container .datepicker__container .datepicker__days {
+  @apply flex
+}
+.input__container .datepicker__container .datepicker__days .datepicker__day {
+  @apply text-xs font-semibold text-center
 }
 
 /* Tabs */
