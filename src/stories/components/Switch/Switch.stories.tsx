@@ -13,6 +13,6 @@ export const SwitchMain = () => {
   const [isChecked, setIsChecked] = useState(false);
 
   return (
-    <Switch isChecked={isChecked} setIsChecked={setIsChecked} name='switch' onStatus={action('Toggle')} />
+    <Switch isChecked={isChecked} setIsChecked={(value) => setIsChecked(value)} name='switch' onStatus={action('Toggle')} />
   )
 };

@@ -4,7 +4,7 @@ import '../../../base.css';
 type SwitchTypes = {
   name: string;
   isChecked: boolean;
-  setIsChecked: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsChecked: (value: boolean) => void;
   onStatus: (value: boolean) => void
 }
 
