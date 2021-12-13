@@ -1,7 +1,7 @@
 import moment, { Moment } from 'moment-timezone';
 import React, { FC, useEffect } from 'react';
 import { useState } from 'react';
-import { HiCalendar, HiChevronLeft, HiChevronRight } from 'react-icons/hi';
+import { HiCalendar, HiChevronLeft, HiChevronRight, HiOutlineCalendar } from 'react-icons/hi';
 import '../../../base.css'
 
 type DatePickerTypes = {
@@ -110,7 +110,7 @@ export const DatePicker: FC<DatePickerTypes> = (props) => {
             readOnly
           />
           <i className="date">
-            <HiCalendar className="w-4 h-4 text-gray-400" />
+            <HiOutlineCalendar className="w-4 h-4 text-gray-400" />
           </i>
         </div>
         <div className={`${isOpen ? 'opacity-100' : 'opacity-0'} datepicker__container `}>
