@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import { HiExclamationCircle, HiGlobe, HiLockClosed, HiMail } from 'react-icons/hi';
+import { HiExclamationCircle, HiGlobe, HiLockClosed, HiMail, HiOutlineGlobe, HiOutlineLockClosed, HiOutlineMail } from 'react-icons/hi';
 import '../../../base.css';
 
 type InputFieldTypes = {
@@ -25,11 +25,11 @@ export const InputField: FC<InputFieldTypes> = (props) => {
       case "text":
         return null;
       case "password":
-        return <HiLockClosed className="w-5 h-5"/>;
+        return <HiOutlineLockClosed className="w-5 h-5"/>;
       case "mail":
-        return <HiMail className="w-5 h-5"/>;
+        return <HiOutlineMail className="w-5 h-5"/>;
       case "web":
-        return <HiGlobe className="w-5 h-5"/>;
+        return <HiOutlineGlobe className="w-5 h-5"/>;
       default:
         return null;
     }
