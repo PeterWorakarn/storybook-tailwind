@@ -10,13 +10,13 @@
 }
 
 .gallery {
-  @apply flex gap-2
+  @apply flex
 }
 .gallery--row {
-  @apply flex-row
+  @apply flex-row  gap-2
 }
 .gallery--col {
-  @apply flex-col
+  @apply flex-col gap-4
 }
 
 .primary-red-gradient {
@@ -192,6 +192,20 @@ input.tag__status ~ .tag {
 }
 input.tag__status:checked ~ .tag {
   @apply opacity-100 bg-gradient-to-r from-red-500 to-red-300 text-white border-none;
+}
+
+/* TagInput */
+.tag-input__container {
+  @apply flex flex-col bg-white border border-gray-200 p-1 w-auto max-w-xs text-black outline-none
+}
+.tag-input__container .tag-input__input {
+  @apply w-full outline-none bg-white py-1 px-2.5
+}
+.tag-input__container .tag-input__tags {
+  @apply flex flex-row flex-wrap gap-1
+}
+.tag-input__container .tag-input__tags .tag-input__tag {
+  @apply pl-3 pr-1.5 py-0.5 gap-1 flex items-center justify-center bg-red-500 text-white shadow-sm
 }
 
 /* Switch */

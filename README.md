@@ -17,7 +17,7 @@
 - [ ] PaginatedTable
 - [x] Table
 - [x] SortedTable
-- [ ] TagsInput
+- [x] TagsInput✅
 - [ ] Dropdown with Search
 - [ ] Checkbox
 - [ ] Progress bar

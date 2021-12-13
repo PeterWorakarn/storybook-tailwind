@@ -10,6 +10,11 @@ export enum PositionType {
   BOTTOM_RIGHT = 'bottom_right',
   BOTTOM_LEFT = 'bottom_left',
 }
+export enum borderVariant {
+  SQUARE = 'square',
+  NORMAL = 'normal',
+  ROUNDED = 'rounded',
+}
 export enum textTransformType {
   UPPERCASE = 'uppercase',
   LOWERCASE = 'lowercase',
