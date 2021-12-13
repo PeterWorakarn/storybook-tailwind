@@ -13,27 +13,28 @@
 - [x] InputField ✅
 - [x] Modal ✅
 - [x] Dropdown ✅
-- [ ] Date Picker
+- [x] Date Picker ✅
+- [ ] Tab bar
+- [ ] Checkbox
+- [ ] Accordian
+- [ ] Scroll spy
 - [ ] PaginatedTable
+- [ ] OTP
+- [ ] Code Editor
 - [x] Table
 - [x] SortedTable
 - [x] TagsInput✅
 - [ ] Dropdown with Search
-- [ ] Checkbox
 - [ ] Progress bar
 - [ ] Dark mode
 - [ ] Scroll bar
 - [ ] Card
 - [ ] Neumorphic Card
 - [ ] Glassmorism Card
-- [ ] Tab bar
 - [ ] Skeleton Loading
 - [ ] Search API with Debounce
-- [ ] Accordian
 - [ ] Skeleton
-- [ ] OTP
 - [ ] Carousal
-- [ ] Code Editor
 - [ ] Call to Action
 ### Layout 
 - [ ] Mansory https://beanthemes.com/masonry-css/
