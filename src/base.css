@@ -169,7 +169,16 @@ button.btn > .btn__icon {
   @apply flex
 }
 .input__container .datepicker__container .datepicker__days .datepicker__day {
-  @apply text-xs font-semibold text-center
+  @apply text-xs font-semibold text-center pointer-events-none select-none text-gray-400	
+}
+.input__container .datepicker__container .datepicker__dates {
+  @apply flex flex-wrap -mx-1
+}
+.input__container .datepicker__container .datepicker__dates .datepicker__blank-date {
+  @apply flex justify-center items-center text-xs h-7 rounded-full
+}
+.input__container .datepicker__container .datepicker__dates .datepicker__date {
+  @apply flex cursor-default justify-center items-center text-xs h-7 rounded-full
 }
 
 /* Tabs */
