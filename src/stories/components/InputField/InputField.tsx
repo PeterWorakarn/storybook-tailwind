@@ -36,7 +36,7 @@ export const InputField: FC<InputFieldTypes> = (props) => {
   }
 
   return (
-    <div className="input__container">
+    <div className="input">
       <div className="label__container">
         <label className="label" htmlFor={`${props.name}`}>
           <p>{props.label ? props.label : 'text'}{props.isRequired && <i className="not-italic text-red-500">*</i>}</p>
@@ -48,7 +48,7 @@ export const InputField: FC<InputFieldTypes> = (props) => {
           {InputIcon(props.type ? props.type : 'text')}
         </i>
         <input
-          className={`${props.type === 'text' ? "input--non-icon" :"input"}`}
+          className={`${props.type === 'text' ? "input--non-icon" :"input--icon"}`}
           id={props.name ? props.name : 'text'}
           name={props.name ? props.name : 'text'}
           value={props.value}

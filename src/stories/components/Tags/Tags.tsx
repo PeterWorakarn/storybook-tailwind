@@ -17,7 +17,7 @@ export const Tags: FC<TagsTypes> = (props) => {
   }
 
   return (
-    <div className="tags__container">
+    <div className="tag">
       {props.items.map((tag: {
         icon?: React.ReactElement<any, string | React.JSXElementConstructor<any>> | undefined;
         title: string;
@@ -33,7 +33,7 @@ export const Tags: FC<TagsTypes> = (props) => {
               value={tag.title}
               onChange={() => onSelectHandler(tag.title)}
             />
-            <div className="tag">
+            <div className="tag__label">
               {tag.icon}{tag.title}
             </div>
           </label>

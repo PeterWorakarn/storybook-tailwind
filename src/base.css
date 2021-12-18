@@ -2,68 +2,156 @@
 @tailwind components;
 @tailwind utilities;
 
-.center {
-  @apply max-w-xl mx-auto flex justify-center items-center
+/* Variable */
+
+/* Color */
+.--major-text-white {
+  color: #FFF;
 }
-.center__item {
-  @apply font-sans w-full flex justify-center items-center p-12 mx-5 my-10 rounded-md shadow-sm bg-gray-50
+
+.--major-text-color {
+  color: #2c2c2c;
+}
+
+.--normal-text-color {
+  color: #4B4B4B;
+}
+
+.--minor-text-color {
+  color: #6e6e6e;
+}
+
+.--accent-text-color {
+  @apply text-red-500
+}
+
+.--accent-background-color {
+  @apply bg-red-500
+}
+
+.--normal-border-color {
+  @apply border-gray-200
+}
+
+.--accent-border-color {
+  @apply border-red-500
+}
+
+.--accent-background-gradient {
+  @apply --major-text-white bg-gradient-to-r from-red-500 to-red-300;
+}
+
+.--accent-rounded {
+  @apply rounded-md
+}
+
+/* Typo */
+.typo {
+  @apply normal-case
+}
+
+.typo.typo--snail {
+  font-size: 0.875rem;
+}
+
+.typo.typo--mouse {
+  font-size: 1rem;
+}
+
+.typo.typo--otter {
+  font-size: 1.25rem;
+}
+
+.typo.typo--dolphin {
+  font-size: 1.625rem;
+}
+
+.typo.typo--hippo {
+  font-size: 2rem;
+}
+
+.typo.typo--mammoth {
+  font-size: 3rem;
+}
+
+/* Components */
+.center {
+  @apply max-w-xl mx-auto flex justify-center items-center selection:bg-red-500 selection:text-white
+}
+
+.center .center__item {
+  @apply font-sans w-full flex justify-center items-center p-12 mx-5 my-10 --accent-rounded shadow-sm bg-gray-50
 }
 
 .gallery {
   @apply flex
 }
-.gallery--row {
-  @apply flex-row  gap-2
+
+.gallery.gallery--row {
+  @apply flex-row gap-2
 }
-.gallery--col {
+
+.gallery.gallery--col {
   @apply flex-col gap-4
 }
 
-.primary-red-gradient {
-  @apply text-white bg-gradient-to-r from-red-500 to-red-300;
+/* ScrollBar */
+.scroll-bar::-webkit-scrollbar-track {
+	box-shadow: none;
+	background-color: rgba(0, 0, 0, 0.10);
+  border-radius: 8px;
 }
-
-/* Typo */
-.typo {
-  color: #333;
-  @apply normal-case
+.scroll-bar::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+	background-color: #FFF;
+  border-radius: 8px;
 }
-.typo.typo--snail { font-size: 0.875rem; }
-.typo.typo--mouse { font-size: 1rem; }
-.typo.typo--otter { font-size: 1.25rem; }
-.typo.typo--dolphin { font-size: 1.625rem; }
-.typo.typo--hippo { font-size: 2rem; }
-.typo.typo--mammoth { font-size: 3rem; }
+.scroll-bar::-webkit-scrollbar-thumb {
+	background-color: #6E6F73;
+	border: 0px solid #fff;
+  border-radius: 8px;
+  box-shadow: none;
+}
 
 /* Button */
-button.btn {
-  @apply text-sm transition-all duration-75 ease-in opacity-75 hover:opacity-100 py-1 px-3 inline-flex justify-center items-center gap-1 outline-none font-medium capitalize
+.btn {
+  @apply text-sm transition-all duration-75 ease-in opacity-75 hover:opacity-100 py-1 px-3 inline-flex justify-center items-center gap-1 outline-none font-medium uppercase
 }
+
 .btn.btn--rounded {
   @apply rounded-full
 }
+
 .btn.btn--square {
-  @apply rounded-md
+  @apply --accent-rounded
 }
+
 .btn.btn--normal {
   @apply w-auto
 }
+
 .btn.btn--full {
   @apply w-full
 }
+
 .btn.btn--primary {
-  @apply primary-red-gradient shadow
+  @apply --accent-background-gradient shadow
 }
+
 .btn.btn--secondary {
-  @apply bg-red-500 text-white shadow
+  @apply --accent-background-color --major-text-white shadow
 }
+
 .btn.btn--tertiary {
-  @apply border border-red-500 text-red-500 shadow
+  @apply border --accent-border-color --accent-text-color shadow
 }
+
 .btn.btn--ghost {
-  @apply text-red-500
+  @apply --accent-text-color
 }
-button.btn > .btn__icon {
+
+.btn .btn__icon {
   @apply w-4 h-4
 }
 
@@ -72,231 +160,400 @@ button.btn > .btn__icon {
 .fab.fab--bl {
   @apply bottom-2 left-2
 }
+
 .fab.fab--br {
   @apply bottom-2 right-2
 }
+
 .fab.fab--tl {
   @apply top-2 left-2
 }
+
 .fab.fab--tr {
   @apply top-2 right-2
 }
 
 /* Modal */
-.modal__containers { @apply z-10 fixed box-border overflow-hidden inset-0 outline-none}
-.modal__containers .modal__container { @apply relative flex h-full w-full justify-center items-center my-10 text-gray-600}
-.modal__container .modal__backdrop { @apply z-20 bg-gray-700 opacity-20 absolute h-full w-full}
-.modal__containers .modal { @apply  z-30 relative w-full max-w-xs max-h-full bg-white rounded-md shadow p-3 flex flex-col items-center capitalize}
-.modal__containers .modal .modal__close-btn { @apply absolute cursor-pointer text-red-500 font-medium top-1.5 right-1.5}
+.modal {
+  @apply z-10 fixed box-border overflow-hidden inset-0 outline-none
+}
+
+.modal .modal__container {
+  @apply relative flex h-full w-full justify-center items-center my-10 --minor-text-color 
+}
+
+.modal .modal__container .modal__backdrop {
+  @apply z-20 bg-gray-700 opacity-20 absolute h-full w-full
+}
+
+.modal .modal__container .modal__dialog {
+  @apply z-30 relative w-full max-w-xs max-h-full bg-white --accent-rounded shadow p-3 flex flex-col items-center capitalize
+}
+
+.modal .modal__container .modal__dialog .modal__header {
+  @apply  typo typo--otter font-bold --minor-text-color w-full text-left
+}
+.modal .modal__container .modal__dialog .modal__body {
+  @apply w-full typo typo--snail font-normal --minor-text-color
+}
+
+.modal .modal__container .modal__dialog .modal__close-btn {
+  @apply absolute cursor-pointer --accent-text-color font-medium top-1.5 right-1.5
+}
 
 /* Dropdown */
-.dropdown__container {
+.dropdown {
   @apply inline-block text-left my-1 w-28
 }
-.dropdown__container .dropdown__input {
-  @apply z-0 h-8 inline-flex justify-between items-center w-full px-4 py-0.5 border border-gray-200 bg-white rounded-md focus:outline-none transition-colors
+
+.dropdown .dropdown__input {
+  @apply z-0 h-8 inline-flex justify-between items-center w-full px-4 py-0.5 border --normal-border-color bg-white --accent-rounded focus:outline-none transition-colors
 }
-.dropdown__container .dropdown__input__field {
-  @apply capitalize ml-4 text-sm text-gray-600 text-center pointer-events-none outline-none w-full bg-transparent
+
+.dropdown .dropdown__input__field {
+  @apply capitalize ml-4 text-sm --minor-text-color text-center pointer-events-none outline-none w-full bg-transparent
 }
-.dropdown__container .dropdown__input__icon {
-  @apply -mr-2 ml-2 h-6 w-6 text-gray-600
+
+.dropdown .dropdown__input__icon {
+  @apply -mr-2 ml-2 h-6 w-6 --minor-text-color
 }
-.dropdown__container .dropdown__backdrop {
+
+.dropdown .dropdown__backdrop {
   @apply z-10 opacity-0 invisible transition-all duration-300 transform origin-top-right -translate-y-2 scale-95
 }
-.dropdown__container:focus-within .dropdown__backdrop {
-  opacity:1;
+
+.dropdown:focus-within .dropdown__backdrop {
+  opacity: 1;
   transform: translate(0) scale(1);
   visibility: visible;
 }
-.dropdown__container .dropdown__backdrop .dropdown__items { 
-  @apply z-10 overflow-y-auto max-h-44 origin-top-right absolute left-0 mt-1 w-full rounded-md shadow bg-white focus:outline-none
+
+.dropdown .dropdown__backdrop .dropdown__items {
+  @apply z-10 overflow-y-auto max-h-44 origin-top-right absolute left-0 mt-1 w-full --accent-rounded shadow bg-white focus:outline-none
 }
-.dropdown__container .dropdown__backdrop .dropdown__items .dropdown__item {
-  @apply capitalize text-center hover:text-red-500 hover:bg-gray-100 cursor-pointer text-gray-600 block px-4 py-2 text-sm
+
+.dropdown .dropdown__backdrop .dropdown__items .dropdown__item {
+  @apply capitalize text-center hover:text-red-500 hover:bg-gray-100 cursor-pointer --minor-text-color block px-4 py-2 text-sm
 }
 
 /* Input */
-.input__container .label__container {
+.input .label__container {
   @apply flex flex-row justify-between items-center
 }
-.input__container .label__container .label {
-  @apply capitalize font-semibold text-sm
+
+.input .label__container .label {
+  @apply capitalize font-semibold text-sm --minor-text-color
 }
-.input__container .label__container .error {
-  @apply text-red-500 w-4 h-4 mr-1
+
+.input .label__container .error {
+  @apply --accent-text-color w-4 h-4 mr-1
 }
-.input__container .input__field {
+
+.input .input__field {
   @apply relative
 }
-.input__container .input__field .input {
-  @apply text-sm text-black font-medium border border-gray-200 rounded-md py-1 pl-8 pr-3 my-1 w-full   outline-none
+
+.input .input__field .input--icon {
+  @apply text-sm --minor-text-color font-medium border --normal-border-color --accent-rounded py-1 pl-8 pr-3 my-1 w-full outline-none
 }
-.input__container .input__field .input--non-icon {
-  @apply text-sm text-black font-medium border border-gray-200 rounded-md py-1 px-3 my-1 w-full  outline-none
+
+.input .input__field .input--non-icon {
+  @apply text-sm --minor-text-color font-medium border --normal-border-color --accent-rounded py-1 px-3 my-1 w-full outline-none
 }
-.input__container .input__field .input--datepicker {
-  @apply text-sm text-black font-medium border border-gray-200 rounded-md py-1 px-3 my-1 w-56  outline-none
+
+.input .input__field .input--datepicker {
+  @apply text-sm --minor-text-color font-medium border --normal-border-color --accent-rounded py-1 px-3 my-1 w-56 outline-none
 }
-.input__container .input__field .password {
-  @apply absolute top-3 right-1.5 text-gray-400
+
+.input .input__field .input--password {
+  @apply absolute top-3 right-1.5 --minor-text-color
 }
-.input__container .input__field .date {
-  @apply absolute top-3 right-1.5 text-gray-400
+
+.input .input__field .input--date-icon {
+  @apply absolute top-3 right-1.5 --minor-text-color
 }
 
 /* Datepicker */
 .datepicker__backdrop {
   @apply opacity-0 absolute bg-white z-10 w-full h-full
 }
-.input__container .datepicker__container {
-  @apply transition-all duration-75 bg-white mt-14 rounded-md shadow pl-4 pr-2 py-2 absolute top-0 left-0 w-full
+
+.input .datepicker__container {
+  @apply transition-all duration-75 bg-white mt-14 --accent-rounded shadow pl-4 pr-2 py-2 absolute top-0 left-0 w-full
 }
-.input__container .datepicker__container .datepicker__header {
+
+.input .datepicker__container .datepicker__header {
   @apply flex justify-between items-center mb-2
 }
-.input__container .datepicker__container .datepicker__header .datepicker__month {
-  @apply text-sm font-bold text-gray-800
+
+.input .datepicker__container .datepicker__header .datepicker__month {
+  @apply text-sm font-bold --minor-text-color
 }
-.input__container .datepicker__container .datepicker__header .datepicker__year {
-  @apply ml-1 text-sm text-gray-600 font-normal
+
+.input .datepicker__container .datepicker__header .datepicker__year {
+  @apply ml-1 text-sm --minor-text-color font-medium
 }
-.input__container .datepicker__container .datepicker__header .datepicker__icon {
+
+.input .datepicker__container .datepicker__header .datepicker__icon {
   @apply w-5 h-5
 }
-.input__container .datepicker__container .datepicker__days {
+
+.input .datepicker__container .datepicker__days {
   @apply flex
 }
-.input__container .datepicker__container .datepicker__days .datepicker__day {
-  @apply text-xs font-semibold text-center pointer-events-none select-none text-gray-400	
+
+.input .datepicker__container .datepicker__days .datepicker__day {
+  @apply text-xs font-semibold text-center pointer-events-none select-none --minor-text-color
 }
-.input__container .datepicker__container .datepicker__dates {
+
+.input .datepicker__container .datepicker__dates {
   @apply flex flex-wrap -mx-1
 }
-.input__container .datepicker__container .datepicker__dates .datepicker__blank-date {
+
+.input .datepicker__container .datepicker__dates .datepicker__blank-date {
   @apply flex justify-center items-center text-xs h-7 rounded-full
 }
-.input__container .datepicker__container .datepicker__dates .datepicker__date {
+
+.input .datepicker__container .datepicker__dates .datepicker__date {
   @apply flex cursor-default justify-center items-center text-xs h-7 rounded-full
 }
 
-/* Tabs */
-.tabs__container { @apply bg-gray-200 text-xs text-gray-500 leading-none border-2 border-gray-200 rounded-full inline-flex}
-.tab__container { @apply gap-1 inline-flex items-center transition-colors duration-150 ease-in focus:outline-none hover:text-red-500 focus:text-red-500 rounded-full px-3 py-1}
-.tab { @apply text-base uppercase}
-
-/* Chip AKA Tag */
-.tags__container {
-  @apply flex justify-start flex-wrap gap-2 mt-2
+/* Table */
+.table {
+  @apply bg-white p-4 shadow-sm --accent-rounded relative
 }
-.tags__container .tag__container .tag__status {
+.table .table_container {
+  @apply w-full whitespace-nowrap
+}
+.table .table_container .table__head {
+  @apply sticky top-0 bg-white shadow-sm 
+}
+.table .table_container .table__head .table__head-items {
+  @apply h-auto text-sm leading-none bg-white --minor-text-color focus:outline-none
+}
+.table .table_container .table__head .table__head-items .table__head-item {
+  @apply font-medium text-base p-2 uppercase
+}
+.table .table_container .table__body {
+  @apply capitalize
+}
+.table .table_container .table__body .table_body-item {
+  @apply h-10 text-sm leading-none --minor-text-color bg-white border-b border-gray-100 focus:outline-none
+}
+.table .table__endline {
+  @apply flex justify-center items-center
+}
+.table .table__endline .table__endline--line {
+  @apply h-0.5 border-none w-1/3 bg-gray-100 rounded-full mt-4 mb-2
+}
+
+
+/* Checkbox */
+.checkbox {
+  @apply flex gap-2 items-center justify-start
+}
+
+.checkbox .checkbox__container {
+  @apply w-5 h-5 rounded flex items-center justify-center
+}
+
+.checkbox .checkbox__container .checkbox__icon {
+  @apply --major-text-white bg-transparent w-3.5 h-3.5 transition-all duration-150 ease-out
+}
+
+.checkbox .checkbox__input {
   @apply sr-only
 }
-.tags__container .tag__container .tag {
-  @apply transition-all duration-100 ease-out flex gap-1 justify-center items-center border-none cursor-pointer py-0.5 px-3 rounded-md
+
+.checkbox .checkbox__label {
+  @apply typo typo--otter transition-all duration-150 --minor-text-color
 }
-input.tag__status ~ .tag {
-  @apply opacity-75 bg-gradient-to-r from-gray-200 to-gray-200 text-gray-500 border-none;
+
+/* Tabs */
+.tab {
+  @apply bg-gray-200 text-xs --minor-text-color leading-none border-2 --normal-border-color rounded-full inline-flex
 }
-input.tag__status:checked ~ .tag {
-  @apply opacity-100 bg-gradient-to-r from-red-500 to-red-300 text-white border-none;
+
+.tab .tab__container {
+  @apply gap-1 inline-flex items-center transition-colors duration-150 ease-in focus:outline-none hover:text-red-500 focus:text-red-500 rounded-full px-3 py-1
+}
+
+.tab .tab__label {
+  @apply text-base uppercase
+}
+
+/* Chip AKA Tag */
+.tag {
+  @apply flex justify-start flex-wrap gap-2 mt-2
+}
+
+.tag .tag__container .tag__status {
+  @apply sr-only
+}
+
+.tag .tag__container .tag__label {
+  @apply transition-all duration-100 ease-out flex gap-1 justify-center items-center border-none cursor-pointer py-0.5 px-3 --accent-rounded
+}
+
+.tag .tag__container .tag__status~.tag__label {
+  @apply opacity-75 bg-gradient-to-r from-gray-200 to-gray-200 --minor-text-color border-none;
+}
+
+.tag .tag__container .tag__status:checked~.tag__label {
+  @apply opacity-100 bg-gradient-to-r from-red-500 to-red-300 --major-text-white border-none;
 }
 
 /* TagInput */
-.tag-input__container {
-  @apply flex flex-col bg-white border border-gray-200 p-1 w-auto max-w-xs text-black outline-none
+.tag-input {
+  @apply flex flex-col bg-white border --normal-border-color p-1 w-auto max-w-xs --minor-text-color outline-none
 }
-.tag-input__container .tag-input__input {
+
+.tag-input .tag-input__input {
   @apply w-full outline-none bg-white py-1 px-2.5
 }
-.tag-input__container .tag-input__tags {
+
+.tag-input .tag-input__tags {
   @apply flex flex-row flex-wrap gap-1
 }
-.tag-input__container .tag-input__tags .tag-input__tag {
-  @apply pl-3 pr-1.5 py-0.5 gap-1 flex items-center justify-center bg-red-500 text-white shadow-sm
+
+.tag-input .tag-input__tags .tag-input__tag {
+  @apply pl-3 pr-1.5 py-0.5 gap-1 flex items-center justify-center --accent-background-color --major-text-white shadow-sm
+}
+
+/* OTP */
+.otp .otp__input {
+  @apply --minor-text-color
 }
 
 /* Switch */
-.switch__container {
+.switch {
   @apply relative inline-block w-16 align-middle select-none
 }
-.switch__container .switch {
-  @apply transition-transform duration-75 ease-in  absolute block w-6 h-6 rounded-full  border-2 appearance-none cursor-pointer
+
+.switch .switch__input {
+  @apply transition-transform duration-75 ease-in absolute block w-6 h-6 rounded-full border-2 appearance-none cursor-pointer
 }
 
-.switch__container input.switch:checked {
+.switch .switch__input:checked {
   background-color: #FFF !important;
   transform: translateX(16px) !important;
   border-color: #EF4444 !important;
 }
-.switch__container input.switch {
+
+.switch .switch__input {
   background-color: #FFF !important;
   transform: translateX(0px) !important;
   border-color: #e4e4e4 !important;
 }
-.switch__container input.switch:checked + label.switch__label {
+
+.switch .switch__input:checked+label.switch__label {
   background-color: #EF4444 !important;
 }
-.switch__container input.switch + label.switch__label {
+
+.switch .switch__input+label.switch__label {
   background-color: #e4e4e4 !important;
 }
 
 /* Loading */
-.loading__container {
+.loading {
   display: flex;
   justify-content: center;
   padding: 5px;
   position: relative;
 }
 
-.loading__container .loading__container__sk-chase {
+.loading .loading__container__sk-chase {
   width: 40px;
   height: 40px;
   position: relative;
   animation: sk-chase 2.5s infinite linear both;
 }
 
-.loading__container .loading__container__sk-chase .loading__container__sk-chase-dot {
+.loading .loading__container__sk-chase .loading__container__sk-chase-dot {
   width: 100%;
   height: 100%;
   position: absolute;
   left: 0;
-  top: 0; 
-  animation: sk-chase-dot 2.0s infinite ease-in-out both; 
+  top: 0;
+  animation: sk-chase-dot 2.0s infinite ease-in-out both;
 }
 
-.loading__container .loading__container__sk-chase .loading__container__sk-chase-dot:before {
+.loading .loading__container__sk-chase .loading__container__sk-chase-dot:before {
   content: '';
   display: block;
   width: 25%;
   height: 25%;
   background-color: #EF4444;
   border-radius: 500px;
-  animation: sk-chase-dot-before 2.0s infinite ease-in-out both; 
+  animation: sk-chase-dot-before 2.0s infinite ease-in-out both;
 }
-.loading__container__sk-chase-dot:nth-child(1) { animation-delay: -1.1s; }
-.loading__container__sk-chase-dot:nth-child(2) { animation-delay: -1.0s; }
-.loading__container__sk-chase-dot:nth-child(3) { animation-delay: -0.9s; }
-.loading__container__sk-chase-dot:nth-child(4) { animation-delay: -0.8s; }
-.loading__container__sk-chase-dot:nth-child(5) { animation-delay: -0.7s; }
-.loading__container__sk-chase-dot:nth-child(6) { animation-delay: -0.6s; }
-.loading__container__sk-chase-dot:nth-child(1):before { animation-delay: -1.1s; }
-.loading__container__sk-chase-dot:nth-child(2):before { animation-delay: -1.0s; }
-.loading__container__sk-chase-dot:nth-child(3):before { animation-delay: -0.9s; }
-.loading__container__sk-chase-dot:nth-child(4):before { animation-delay: -0.8s; }
-.loading__container__sk-chase-dot:nth-child(5):before { animation-delay: -0.7s; }
-.loading__container__sk-chase-dot:nth-child(6):before { animation-delay: -0.6s; }
+
+.loading .loading__container__sk-chase .loading__container__sk-chase-dot:nth-child(1) {
+  animation-delay: -1.1s;
+}
+
+.loading .loading__container__sk-chase .loading__container__sk-chase-dot:nth-child(2) {
+  animation-delay: -1.0s;
+}
+
+.loading .loading__container__sk-chase .loading__container__sk-chase-dot:nth-child(3) {
+  animation-delay: -0.9s;
+}
+
+.loading .loading__container__sk-chase .loading__container__sk-chase-dot:nth-child(4) {
+  animation-delay: -0.8s;
+}
+
+.loading .loading__container__sk-chase .loading__container__sk-chase-dot:nth-child(5) {
+  animation-delay: -0.7s;
+}
+
+.loading .loading__container__sk-chase .loading__container__sk-chase-dot:nth-child(6) {
+  animation-delay: -0.6s;
+}
+
+.loading .loading__container__sk-chase .loading__container__sk-chase-dot:nth-child(1):before {
+  animation-delay: -1.1s;
+}
+
+.loading .loading__container__sk-chase .loading__container__sk-chase-dot:nth-child(2):before {
+  animation-delay: -1.0s;
+}
+
+.loading .loading__container__sk-chase .loading__container__sk-chase-dot:nth-child(3):before {
+  animation-delay: -0.9s;
+}
+
+.loading .loading__container__sk-chase .loading__container__sk-chase-dot:nth-child(4):before {
+  animation-delay: -0.8s;
+}
+
+.loading .loading__container__sk-chase .loading__container__sk-chase-dot:nth-child(5):before {
+  animation-delay: -0.7s;
+}
+
+.loading .loading__container__sk-chase .loading__container__sk-chase-dot:nth-child(6):before {
+  animation-delay: -0.6s;
+}
+
 @keyframes sk-chase {
-  100% { transform: rotate(360deg); } 
+  100% {
+    transform: rotate(360deg);
+  }
 }
+
 @keyframes sk-chase-dot {
-  80%, 100% { transform: rotate(360deg); } 
+  80%, 100% {
+    transform: rotate(360deg);
+  }
 }
+
 @keyframes sk-chase-dot-before {
   50% {
-    transform: scale(0.4); 
-  } 100%, 0% {
-    transform: scale(1.0); 
-  } 
+    transform: scale(0.4);
+  }
+
+  100%, 0% {
+    transform: scale(1.0);
+  }
 }

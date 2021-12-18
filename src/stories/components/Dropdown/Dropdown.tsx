@@ -19,7 +19,7 @@ export const Dropdown: FC<DropdownTypes> = (props) => {
     }
 
     return (
-        <div className="dropdown__container">
+        <div className="dropdown">
             <button onClick={() => setIsOpen((prev) => !prev)} type="button" className="dropdown__input" id="menu-button" aria-expanded="true" aria-haspopup="true">
                 <input
                     className="dropdown__input__field"

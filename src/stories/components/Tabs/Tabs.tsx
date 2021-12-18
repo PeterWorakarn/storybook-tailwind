@@ -20,12 +20,12 @@ export const Tabs: FC<TabsTypes> = (props) => {
 
   return (
     
-      <div className="tabs__container">
+      <div className="tab">
         {props.tabItems.map((item, index) => {
           return (
             <button key={index} onClick={() => onSelectHandler(item.name)} type="button" className={`${currentTab === item.name ? 'rounded-full bg-white text-red-500' : 'text-gray-500'} tab__container `}>
               {item.icon}
-              <span className={`tab ${currentTab === item.name ? 'font-semibold' : 'font-normal'}`}>{item.name}</span>
+              <span className={`tab__label ${currentTab === item.name ? 'font-semibold' : 'font-normal'}`}>{item.name}</span>
             </button>
           )
         })}

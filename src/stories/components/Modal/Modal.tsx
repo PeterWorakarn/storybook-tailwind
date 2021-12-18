@@ -21,17 +21,17 @@ export const Modal: FC<ModalTypes> = (props) => {
                 onClick={() => props.setModal(true)}
             />
             {props.modal && (
-                <div className="modal__containers">
+                <div className="modal">
                     <div className="modal__container">
                         <div
                             // style={{ filter: 'blur(8px)' }} 
                             onClick={() => props.setModal(false)} className="modal__backdrop"></div>
-                        <div className="modal">
+                        <div className="modal__dialog">
                             {props.isCloseButton && <div className="modal__close-btn" onClick={() => props.setModal(false)}><HiOutlineX className="w-5 h-5" /></div>}
-                            <h1 className="typo typo--otter font-bold text-red-500 w-full text-left">
+                            <h1 className="modal__header">
                                 {props.header ? props.header : 'This is header'}
                             </h1>
-                            <div className="w-full typo typo--snail font-normal">
+                            <div className="modal__body">
                                 {props.children ? props.children : 'Consectetur est aute consectetur ipsum et adipisicing in mollit. Tempor elit minim do nulla sint sint laboris consectetur .'}
                             </div>
                         </div>

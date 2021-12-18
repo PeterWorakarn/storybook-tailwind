@@ -17,14 +17,14 @@ export const Switch: FC<SwitchTypes> = (props) => {
 
   return (
     <>
-      <div className="switch__container">
+      <div className="switch">
         <input
           onChange={() => onSelectHandler()}
           checked={props.isChecked}
           type="checkbox"
           name={props.name ? props.name : 'checkbox'}
           id={props.name ? props.name : 'checkbox'}
-          className="switch toggle-checkbox"
+          className="switch__input toggle-checkbox"
         />
 
         <label

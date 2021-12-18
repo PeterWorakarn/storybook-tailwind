@@ -20,7 +20,7 @@ export const InputPasswordToggle: FC<InputPasswordToggleTypes> = (props) => {
     props.onChange(newValue);
   }
   return (
-    <div className="input__container">
+    <div className="input">
       <div className="label__container">
         <label className="label" htmlFor={`${props.name ? props.name : 'password'}`}>
           <p>{props.label ? props.label : 'password'}{props.isRequired && <i className="not-italic text-red-500">*</i>}</p>
@@ -36,7 +36,7 @@ export const InputPasswordToggle: FC<InputPasswordToggleTypes> = (props) => {
           type={toggle ? 'text' : 'password'}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChangeHandler(e.target.value)}
         />
-        <i className="password">
+        <i className="input--password">
           {toggle ? (
             <HiEyeOff onClick={() => setToggle(!toggle)} className="w-4 h-4 text-red-500" />
           ) : (
