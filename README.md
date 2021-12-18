@@ -14,27 +14,29 @@
 - [x] Modal ✅
 - [x] Dropdown ✅
 - [x] Date Picker ✅
-- [ ] Tab bar
-- [ ] Checkbox
-- [ ] Accordian
-- [ ] Scroll spy
-- [ ] PaginatedTable
-- [ ] OTP
-- [ ] Code Editor
+- [x] Checkbox ✅ https://tailwind-elements.com/docs/standard/forms/checkbox/
+- [x] TagsInput✅
 - [x] Table
 - [x] SortedTable
-- [x] TagsInput✅
+- [ ] OTP
+- [ ] Scroll bar
+- [ ] Scroll spy
+- [ ] Carousal
+- [ ] Tab bar
+- [ ] Typo Badges https://tailwind-elements.com/docs/standard/components/badges/
+- [ ] Accordian
+- [ ] PaginatedTable
+- [ ] Code Editor
 - [ ] Dropdown with Search
 - [ ] Progress bar
 - [ ] Dark mode
-- [ ] Scroll bar
-- [ ] Card
+- [ ] Old fashion Card (ทำหลาย ๆ แบบ) https://tailwind-elements.com/docs/standard/components/cards/
+- [ ] Skew Card https://codepen.io/victorwork/pen/OEGKrP
 - [ ] Neumorphic Card
 - [ ] Glassmorism Card
 - [ ] Skeleton Loading
 - [ ] Search API with Debounce
 - [ ] Skeleton
-- [ ] Carousal
 - [ ] Call to Action
 ### Layout 
 - [ ] Mansory https://beanthemes.com/masonry-css/
