@@ -13,7 +13,7 @@ type OTPTypes = {
 const OTPContainer: FC<OTPTypes> = (props) => {
 
   return (
-    <div className="otp">
+    <div className="otp flex flex-row justify-center text-center gap-2">
       {props.otpValues.map((_, index) => {
         return <OTPInput key={index} index={index} onAction={props.onAction} otpValues={props.otpValues} setOtpValues={props.setOtpValues} isDisable={props.isDisable} />
       })}

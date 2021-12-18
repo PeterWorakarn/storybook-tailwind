@@ -65,7 +65,7 @@ const OTPSingleInput: FC<OTPInputTypes> = (props) => {
       onKeyPress={(e) => inputKeyPress(e)}
       type="text"
       maxLength={1}
-      className={`otp__input ${props.isDisable && 'border-gray-200 pointer-events-none opacity-40 border-opacity-40'} ${!isEmpty ? 'border-red-500 translate-y-0' : '-translate-y-1'} `}
+      className={`otp__input font-semibold shadow-sm transform bg-white m-0 border-b-2 border-gray-200 focus-within:border-red-500 transition-all duration-300 ease-out outline-none h-8 w-8 text-center ${props.isDisable && 'border-gray-200 pointer-events-none opacity-40 border-opacity-40'} ${!isEmpty ? 'border-red-500 translate-y-0' : '-translate-y-1'} `}
     />
   );
 };
