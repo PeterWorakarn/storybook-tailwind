@@ -18,7 +18,7 @@
 - [x] TagsInput✅
 - [x] Table
 - [x] SortedTable
-- [ ] OTP
+- [x] OTP
 - [ ] Scroll bar
 - [ ] Scroll spy
 - [ ] Carousal
