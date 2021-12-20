@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@storybook/addon-storysource": "^6.3.12",
+    "@storybook/addon-storysource": "^6.4.9",
     "@storybook/theming": "^6.3.12",
+    "@tailwindcss/line-clamp": "^0.3.0",
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
