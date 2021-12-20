@@ -3,38 +3,52 @@
 @tailwind utilities;
 
 /* Variable */
+:root {
+  --accent-color: #EF4444;
+  --success-color: #52C040;
+  --white-color: #FFF;
+  --major-text-color: #2c2c2c;
+  --normal-text-color: #4B4B4B;
+  --minor-text-color: #6e6e6e;
+  --micro-text-color: #D7D7D7;
+  --gray-element: #E2E2E2;
+  --gray-backdrop: #f9fafb;
+}
 
 /* Color */
 .--major-text-white {
-  color: #FFF;
+  color: var(--white-color);
 }
 
 .--major-text-color {
-  color: #2c2c2c;
+  color: var(--major-text-color);
 }
 
 .--normal-text-color {
-  color: #4B4B4B;
+  color: var(--normal-text-color);
 }
 
 .--minor-text-color {
-  color: #6e6e6e;
+  color: var(--minor-text-color);
+}
+
+.--gray-border-element {
+  border-color: var(--gray-element);
+}
+.--gray-background-element {
+  background-color: var(--gray-element);
 }
 
 .--accent-text-color {
-  @apply text-red-500
+  color: var(--accent-color);
 }
 
 .--accent-background-color {
-  @apply bg-red-500
-}
-
-.--normal-border-color {
-  @apply border-gray-200
+  background-color: var(--accent-color);
 }
 
 .--accent-border-color {
-  @apply border-red-500
+  border-color: var(--accent-color);
 }
 
 .--accent-background-gradient {
@@ -80,7 +94,8 @@
 }
 
 .center .center__item {
-  @apply font-sans w-full flex justify-center items-center p-12 mx-5 my-10 --accent-rounded shadow-sm bg-gray-50
+  background-color: var(--gray-backdrop);
+  @apply font-sans w-full flex justify-center items-center p-12 mx-5 my-10 --accent-rounded shadow-sm 
 }
 
 .gallery {
@@ -191,7 +206,7 @@
 }
 
 .modal .modal__container .modal__dialog .modal__header {
-  @apply  typo typo--otter font-bold --minor-text-color w-full text-left
+  @apply  typo typo--otter font-bold --major-text-color w-full text-left
 }
 .modal .modal__container .modal__dialog .modal__body {
   @apply w-full typo typo--snail font-normal --minor-text-color
@@ -201,13 +216,42 @@
   @apply absolute cursor-pointer --accent-text-color font-medium top-1.5 right-1.5
 }
 
+/* Card */
+.card {
+  @apply rounded-xl
+}
+
+.card.card .card__container {
+  @apply px-5 py-4 flex flex-col gap-1
+}
+.card.card .card__container .card__header {
+  @apply typo typo--otter font-bold --major-text-color w-full text-left
+}
+.card.card .card__container .card__description {
+  @apply typo typo--snail font-normal --minor-text-color w-full text-left line-clamp-2
+}
+
+.card.card--vertical {
+  @apply shadow max-w-xs flex flex-col
+}
+.card.card--vertical .card__img {
+  @apply rounded-t-xl h-52 w-full
+}
+
+.card.card--horizontal {
+  @apply shadow max-w-xs flex flex-row
+}
+.card.card--horizontal .card__img {
+  @apply rounded-l-xl h-52 w-2/4 object-cover
+}
+
 /* Dropdown */
 .dropdown {
   @apply inline-block text-left my-1 w-28
 }
 
 .dropdown .dropdown__input {
-  @apply z-0 h-8 inline-flex justify-between items-center w-full px-4 py-0.5 border --normal-border-color bg-white --accent-rounded focus:outline-none transition-colors
+  @apply z-0 h-8 inline-flex justify-between items-center w-full px-4 py-0.5 border --gray-border-element bg-white --accent-rounded focus:outline-none transition-colors
 }
 
 .dropdown .dropdown__input__field {
@@ -253,24 +297,32 @@
   @apply relative
 }
 
+.input .input__field .input__icon {
+  @apply absolute top-2 left-1 --minor-text-color
+}
 .input .input__field .input--icon {
-  @apply text-sm --minor-text-color font-medium border --normal-border-color --accent-rounded py-1 pl-8 pr-3 my-1 w-full outline-none
+  @apply text-sm --major-text-color font-medium border --gray-border-element --accent-rounded py-1 pl-8 pr-3 my-1 w-full outline-none
 }
 
 .input .input__field .input--non-icon {
-  @apply text-sm --minor-text-color font-medium border --normal-border-color --accent-rounded py-1 px-3 my-1 w-full outline-none
+  @apply text-sm --major-text-color font-medium border --gray-border-element --accent-rounded py-1 px-3 my-1 w-full outline-none
 }
 
 .input .input__field .input--datepicker {
-  @apply text-sm --minor-text-color font-medium border --normal-border-color --accent-rounded py-1 px-3 my-1 w-56 outline-none
+  @apply text-sm --major-text-color font-medium border --gray-border-element --accent-rounded py-1 px-3 my-1 w-56 outline-none
 }
 
 .input .input__field .input--password {
-  @apply absolute top-3 right-1.5 --minor-text-color
+  @apply absolute top-3 right-1.5 --major-text-color
 }
 
 .input .input__field .input--date-icon {
   @apply absolute top-3 right-1.5 --minor-text-color
+}
+
+/* OTP */
+.otp .otp__input {
+  @apply --major-text-color !important
 }
 
 /* Datepicker */
@@ -287,15 +339,15 @@
 }
 
 .input .datepicker__container .datepicker__header .datepicker__month {
-  @apply text-sm font-bold --minor-text-color
+  @apply text-sm font-bold --major-text-color
 }
 
 .input .datepicker__container .datepicker__header .datepicker__year {
-  @apply ml-1 text-sm --minor-text-color font-medium
+  @apply ml-1 text-sm --major-text-color font-bold
 }
 
 .input .datepicker__container .datepicker__header .datepicker__icon {
-  @apply w-5 h-5
+  @apply w-5 h-5 --accent-text-color
 }
 
 .input .datepicker__container .datepicker__days {
@@ -315,7 +367,13 @@
 }
 
 .input .datepicker__container .datepicker__dates .datepicker__date {
-  @apply flex cursor-default justify-center items-center text-xs h-7 rounded-full
+  @apply flex cursor-default justify-center items-center text-xs h-7 rounded-full font-bold
+}
+.input .datepicker__container .datepicker__dates .datepicker__date.--inactive {
+  @apply --normal-text-color
+}
+.input .datepicker__container .datepicker__dates .datepicker__date.--active {
+  @apply --accent-background-color --major-text-white
 }
 
 /* Table */
@@ -371,7 +429,7 @@
 
 /* Tabs */
 .tab {
-  @apply bg-gray-200 text-xs --minor-text-color leading-none border-2 --normal-border-color rounded-full inline-flex
+  @apply bg-gray-200 text-xs --minor-text-color leading-none border-2 --gray-border-element rounded-full inline-flex
 }
 
 .tab .tab__container {
@@ -405,7 +463,7 @@
 
 /* TagInput */
 .tag-input {
-  @apply flex flex-col bg-white border --normal-border-color p-1 w-auto max-w-xs --minor-text-color outline-none
+  @apply flex flex-col bg-white border --gray-border-element p-1 w-auto max-w-xs --major-text-color outline-none
 }
 
 .tag-input .tag-input__input {
@@ -437,7 +495,7 @@
 .switch .switch__input:checked {
   background-color: #FFF !important;
   transform: translateX(16px) !important;
-  border-color: #EF4444 !important;
+  border-color: var(--accent-color) !important;
 }
 
 .switch .switch__input {
@@ -447,7 +505,7 @@
 }
 
 .switch .switch__input:checked+label.switch__label {
-  background-color: #EF4444 !important;
+  background-color: var(--accent-color) !important;
 }
 
 .switch .switch__input+label.switch__label {
@@ -483,7 +541,7 @@
   display: block;
   width: 25%;
   height: 25%;
-  background-color: #EF4444;
+  background-color: var(--accent-color);
   border-radius: 500px;
   animation: sk-chase-dot-before 2.0s infinite ease-in-out both;
 }
