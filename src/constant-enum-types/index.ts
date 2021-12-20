@@ -29,4 +29,9 @@ export enum textSizeType {
   HIPPO = 'hippo',
   MAMMOTH = 'mammoth',
 }
+export enum flexJustifyType {
+  JUSTIFY_END = 'justify-end',
+  JUSTIFY_START = 'justify-start',
+  JUSTIFY_BETWEEN = 'justify-between',
+}
 

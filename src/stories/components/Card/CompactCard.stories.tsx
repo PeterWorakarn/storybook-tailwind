@@ -1,11 +1,12 @@
 /* eslint-disable import/no-anonymous-default-export */
 import React from "react";
-import { FormalCard } from "./FormalCard";
+import { flexJustifyType } from "../../../constant-enum-types";
+import { CompactCard } from "./CompactCard";
 
 
 export default {
   title: "Component/Card",
-  component: FormalCard,
+  component: CompactCard,
   argTypes: {
     title: {
       name: 'Title',
@@ -51,20 +52,32 @@ export default {
       defaultValue: true,
       control: { type: 'boolean' }
     },
-    direction: {
-      name: 'Direction',
-      defaultValue: 'vertical',
-      options: ['vertical', 'horizontal'],
-      control: { type: 'select' }
+    height: {
+      name: 'height',
+      defaultValue: 384,
+      control: {
+        type: 'range',
+        min: 190,
+        max: 400,
+        step: 10,
+      }
     },
+    flexJustifyType: {
+      name: 'flexJustifyType',
+      defaultValue: flexJustifyType.JUSTIFY_END,
+      options: [flexJustifyType.JUSTIFY_BETWEEN, flexJustifyType.JUSTIFY_START, flexJustifyType.JUSTIFY_END],
+      control: {
+        type: 'select'
+      }
+    }
   }
 };
 
-export const CustomFormalCard = (arg: any) => {
+export const CustomCompactCard = (arg: any) => {
 
   return (
     <main className="gallery gallery--col">
-      <FormalCard {...arg} />
+      <CompactCard {...arg} />
     </main>
   )
 }
