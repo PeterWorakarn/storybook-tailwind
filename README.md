@@ -16,10 +16,14 @@
 - [x] Date Picker ✅
 - [x] Checkbox ✅ https://tailwind-elements.com/docs/standard/forms/checkbox/
 - [x] TagsInput✅
+- [x] Scroll bar✅
+- [x] OTP✅
 - [x] Table
 - [x] SortedTable
-- [x] OTP
-- [ ] Scroll bar
+- [ ] Formal Card (with show fide functionality) https://tailwind-elements.com/docs/standard/components/cards/
+- [ ] Compact Card (like peter work)
+- [ ] Borderless Card (like sem rush)
+- [ ] Drawer
 - [ ] Scroll spy
 - [ ] Carousal
 - [ ] Tab bar
@@ -30,14 +34,13 @@
 - [ ] Dropdown with Search
 - [ ] Progress bar
 - [ ] Dark mode
-- [ ] Old fashion Card (ทำหลาย ๆ แบบ) https://tailwind-elements.com/docs/standard/components/cards/
 - [ ] Skew Card https://codepen.io/victorwork/pen/OEGKrP
 - [ ] Neumorphic Card
 - [ ] Glassmorism Card
 - [ ] Skeleton Loading
 - [ ] Search API with Debounce
 - [ ] Skeleton
-- [ ] Call to Action
+- [ ] Call to Action (like datayolk, like ahancer)
 ### Layout 
 - [ ] Mansory https://beanthemes.com/masonry-css/
 ### Page 
