@@ -4,7 +4,7 @@ import { action } from "@storybook/addon-actions";
 import { InputPasswordToggle } from "./InputPasswordToggle";
 
 export default {
-  title: "Component/InputPasswordToggle",
+  title: "Component/Input",
   component: InputPasswordToggle,
   argTypes: {
     label: {
@@ -35,7 +35,7 @@ export default {
   }
 };
 
-export const CustomPasswordToggle = (args: any) => {
+export const PasswordInput = (args: any) => {
   const [value, setValue] = useState('');
 
   return <InputPasswordToggle value={value} setValue={setValue} {...args} onChange={action('Typing')} />

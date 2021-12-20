@@ -4,7 +4,7 @@ import { action } from "@storybook/addon-actions";
 import { InputField } from "./InputField";
 
 export default {
-  title: "Component/InputField",
+  title: "Component/Input",
   component: InputField,
   argTypes: {
     type: {
@@ -46,7 +46,7 @@ export default {
   }
 };
 
-export const CustomInput = (args: any) => {
+export const BasicInput = (args: any) => {
   const [value, setValue] = useState('');
 
   return <InputField value={value} setValue={setValue} {...args} onChange={action('Typing')} />

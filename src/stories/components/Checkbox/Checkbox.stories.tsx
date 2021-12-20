@@ -6,7 +6,7 @@ import { Checkbox } from "./Checkbox";
 
 
 export default {
-  title: "Component/Checkbox",
+  title: "Component/Input",
   component: Checkbox,
   argTypes: {
     label: {
@@ -22,7 +22,7 @@ export default {
   }
 };
 
-export const CustomCheckbox = (args: any) => {
+export const CheckboxInput = (args: any) => {
   const [checkbox, setCheckbox] = useState(false);
   return (
     <main className="gallery gallery--col">

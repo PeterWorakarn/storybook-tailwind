@@ -44,7 +44,7 @@ export const InputField: FC<InputFieldTypes> = (props) => {
         {props.isError && <HiExclamationCircle className="error" />}
       </div>
       <div className="input__field">
-        <i className="absolute top-2 left-1 text-gray-400">
+        <i className="input__icon">
           {InputIcon(props.type ? props.type : 'text')}
         </i>
         <input

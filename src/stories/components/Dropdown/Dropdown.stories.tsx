@@ -5,11 +5,11 @@ import { action } from "@storybook/addon-actions";
 
 
 export default {
-  title: "Component/Dropdown",
+  title: "Component/Input",
   component: Dropdown,
 };
 
-export const PlainDropdown = () => {
+export const DropdownInput = () => {
   const [value, setValue] = useState('');
   const items = [
     'item 1',

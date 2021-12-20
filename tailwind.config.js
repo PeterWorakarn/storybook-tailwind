@@ -2,7 +2,12 @@ module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        display: ['Inter', 'system-ui', 'sans-serif'],
+        body: ['Inter', 'system-ui', 'sans-serif'],
+      },
+    },
   },
   variants: {
     extend: {
@@ -14,8 +19,17 @@ module.exports = {
           aqua: '#32B0C7',
           navy: '#212339',
         },
-      }
+      },
+      textColor: [
+        "selection"
+      ],
+      backgroundColor: [
+        "selection"
+      ],
     },
   },
-  plugins: [],
+  plugins: [
+    require("tailwindcss-selection-variant"),
+    require('@tailwindcss/line-clamp'),
+  ],
 }

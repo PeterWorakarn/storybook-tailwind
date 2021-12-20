@@ -5,7 +5,7 @@ import { action } from "@storybook/addon-actions";
 
 
 export default {
-  title: "Component/Switch",
+  title: "Component/Input",
   component: Switch,
 };
 

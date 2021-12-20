@@ -9,6 +9,7 @@ type TagsInputTypes = {
   valueData: string[];
   borderVariant: borderVariant;
   onChangeHandler: (value: string[]) => void;
+  onAction: (value: string[]) => void;
 }
 
 const variant = (type: borderVariant) => {
@@ -29,6 +30,7 @@ export const TagsInput: FC<TagsInputTypes> = (props) => {
     newTags.splice(index, 1);
     // add custom onChange here
     props.onChangeHandler(newTags);
+    props.onAction(newTags);
   }
 
   const inputKeyDown = (e: any) => {
@@ -40,6 +42,7 @@ export const TagsInput: FC<TagsInputTypes> = (props) => {
       const addNewTags = [...props.valueData, value]
       // add custom onChange here
       props.onChangeHandler(addNewTags);
+      props.onAction(addNewTags);
       e.target.value = null;
     }
     else if (e.keyCode === 32 && value) {
@@ -49,6 +52,7 @@ export const TagsInput: FC<TagsInputTypes> = (props) => {
       const addNewTags = [...props.valueData, value]
       // add custom onChange here
       props.onChangeHandler(addNewTags);
+      props.onAction(addNewTags);
       e.target.value = null;
     }
     else if (e.key === 'Backspace' && !value) {
@@ -56,7 +60,7 @@ export const TagsInput: FC<TagsInputTypes> = (props) => {
     }
   }
   return (
-    <div className={`tag-input__container ${variant(props.borderVariant === borderVariant.ROUNDED ? borderVariant.NORMAL : props.borderVariant )}`}>
+    <div className={`tag-input ${variant(props.borderVariant === borderVariant.ROUNDED ? borderVariant.NORMAL : props.borderVariant )}`}>
       <div className="tag-input__tags">
         {props.valueData.map((tag, i) => (
           <span key={tag} className={`tag-input__tag ${variant(props.borderVariant)}`}>

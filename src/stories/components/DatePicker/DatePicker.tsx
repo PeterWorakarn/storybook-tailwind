@@ -11,6 +11,7 @@ type DatePickerTypes = {
   isRequired: boolean;
   dateValue: Date;
   setDateValue: (date: Date) => void;
+  onAction: (date: Date) => void;
 }
 
 const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -72,9 +73,10 @@ export const DatePicker: FC<DatePickerTypes> = (props) => {
   }
   const onSelectDate = (currentDay: number, currentMonth: MONTHS, currentYear: string) => {
     const selectDate = moment(`${currentDay} ${currentMonth} ${currentYear}`, 'DD MMM YYYY')
-    console.log(moment(selectDate).format('DD MMM YYYY'))
-    console.log(moment(selectDate).toDate())
+    // console.log(moment(selectDate).format('DD MMM YYYY'))
+    // console.log(moment(selectDate).toDate())
     props.setDateValue(moment(selectDate).toDate())
+    props.onAction(moment(selectDate).toDate())
   }
 
   const isCurrentDate = (day: number) => {
@@ -92,24 +94,23 @@ export const DatePicker: FC<DatePickerTypes> = (props) => {
   return (
     <>
       <div onClick={() => onClickOutside(false)} className="datepicker__backdrop" />
-      <div className="input__container relative z-20">
+      <div className="input relative z-20">
         <div className="label__container">
           <label className="label" htmlFor={`${props.name ? props.name : 'date'}`}>
             <p>{props.label ? props.label : 'date'}{props.isRequired && <i className="not-italic text-red-500">*</i>}</p>
           </label>
         </div>
-        <div className="input__field">
+        <div onClick={() => setIsOpen((prev) => !prev)} className="input__field">
           <input
             className="input--datepicker"
             id={props.name ? props.name : 'date'}
             name={props.name ? props.name : 'date'}
             value={moment(props.dateValue).format('DD MMM YYYY') as string}
             type="text"
-            onClick={() => setIsOpen((prev) => !prev)}
             // onBlur={() => onClickOutside(false)}
             readOnly
           />
-          <i className="date">
+          <i className="input--date-icon">
             <HiOutlineCalendar className="w-4 h-4 text-gray-400" />
           </i>
         </div>
@@ -135,7 +136,7 @@ export const DatePicker: FC<DatePickerTypes> = (props) => {
             })}
             {/* Calculate how many days of that months  */}
             {Array.from({ length: daysInMonth }, (_, i) => i + 1).map((dayInMonth) => {
-              return <span key={dayInMonth} onClick={() => onSelectDate(dayInMonth, month, year)} className={`datepicker__date ${isCurrentDate(dayInMonth) && 'bg-red-500 text-white font-bold'}`} style={{ width: '14.18%' }}>{dayInMonth}</span>
+              return <span key={dayInMonth} onClick={() => onSelectDate(dayInMonth, month, year)} className={`datepicker__date ${isCurrentDate(dayInMonth) ? '--active' : '--inactive'}`} style={{ width: '14.18%' }}>{dayInMonth}</span>
             })}
           </div>
         </div>

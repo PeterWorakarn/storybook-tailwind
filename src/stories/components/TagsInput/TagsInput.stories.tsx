@@ -7,7 +7,7 @@ import { borderVariant } from "../../../constant-enum-types";
 
 
 export default {
-  title: "Component/TagsInput",
+  title: "Component/Input",
   component: TagsInput,
   argTypes: {
     borderVariant: {
@@ -34,6 +34,7 @@ export const TagInput = (args: any) => {
       name="tags"
       valueData={tag}
       onChangeHandler={(value) => setTag(value)}
+      onAction={action('Add tags')}
     />
   )
 };
@@ -50,6 +51,7 @@ export const TagInputGallery = () => {
         valueData={tag}
         borderVariant={borderVariant.SQUARE}
         onChangeHandler={(value) => setTag(value)}
+        onAction={action('Add tags')}
       />
       <TagsInput
         name={name}
@@ -57,6 +59,7 @@ export const TagInputGallery = () => {
         valueData={tag}
         borderVariant={borderVariant.NORMAL}
         onChangeHandler={(value) => setTag(value)}
+        onAction={action('Add tags')}
       />
       <TagsInput
         name={name}
@@ -64,6 +67,7 @@ export const TagInputGallery = () => {
         valueData={tag}
         borderVariant={borderVariant.ROUNDED}
         onChangeHandler={(value) => setTag(value)}
+        onAction={action('Add tags')}
       />
     </main>
   )

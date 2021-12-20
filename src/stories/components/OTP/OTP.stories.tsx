@@ -5,7 +5,7 @@ import OTP from "./OTP";
 
 
 export default {
-  title: "Component/OTP",
+  title: "Component/Input",
   component: OTP,
   argTypes: {
     name: {
@@ -23,7 +23,7 @@ export default {
 
 const otpLength = 4;
 
-export const CustomOTP = (args: any) => {
+export const OTPInput = (args: any) => {
   const [otpValues, setOtpValues] = useState(new Array<string>(otpLength).fill(''));
 
 

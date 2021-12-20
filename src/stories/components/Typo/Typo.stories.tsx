@@ -5,7 +5,7 @@ import { Typo } from "./Typo";
 
 
 export default {
-  title: "Component/Typography",
+  title: "Theme/Typography",
   component: Typo, 
   argTypes: {
     label: {
@@ -22,7 +22,7 @@ export default {
   }
 };
 
-export const CustomTypo = (args: any) => <Typo {...args} />
+export const BasicTypo = (args: any) => <Typo {...args} />
 export const TypoGallery = () => {
   const label = 'Hello World'
   return (
