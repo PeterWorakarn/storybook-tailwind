@@ -21,13 +21,12 @@ export default {
   }
 };
 
-const otpLength = 4;
 
 export const OTPInput = (args: any) => {
-  const [otpValues, setOtpValues] = useState(new Array<string>(otpLength).fill(''));
+  const [otpValues, setOtpValues] = useState('');
 
 
   return (
-    <OTP otpValues={otpValues} setOtpValues={(value: string[]) => setOtpValues(value)} onAction={action('Typing')} {...args} />
+    <OTP otpValues={otpValues} setOtpValues={(value: string) => setOtpValues(value)} onAction={action('Typing')} {...args} />
   )
 }
