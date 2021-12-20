@@ -12,7 +12,7 @@ addDecorator(withInfo({
 export const parameters = {
   options: {
     storySort: {
-      order: ['Intro', 'Pages', ['Home', 'Login', 'Admin'],'Theme' ,'Components', '*', 'WIP'],
+      order: ['Intro', 'Pages', ['Home', 'Login', 'Admin'],'Theme', 'Layout' ,'Components', '*', 'WIP'],
     },
   },
 };

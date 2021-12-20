@@ -20,15 +20,17 @@
 - [x] OTP✅
 - [x] Table
 - [x] SortedTable
-- [ ] Formal Card (with show fide functionality) https://tailwind-elements.com/docs/standard/components/cards/
-- [ ] Compact Card (like peter work)
-- [ ] Borderless Card (like sem rush)
+- [x] Formal Card ✅ https://tailwind-elements.com/docs/standard/components/cards/
+- [x] Borderless Card (like sem rush) ✅
+- [x] Compact Card (like peter h work) ✅
+- [x] Digital ID ✅
+- [ ] Accordian
+- [ ] Circular Progress
+- [ ] Typing page
 - [ ] Drawer
 - [ ] Scroll spy
-- [ ] Carousal
 - [ ] Tab bar
 - [ ] Typo Badges https://tailwind-elements.com/docs/standard/components/badges/
-- [ ] Accordian
 - [ ] PaginatedTable
 - [ ] Code Editor
 - [ ] Dropdown with Search
@@ -42,9 +44,16 @@
 - [ ] Skeleton
 - [ ] Call to Action (like datayolk, like ahancer)
 ### Layout 
-- [ ] Mansory https://beanthemes.com/masonry-css/
+- [x] Mansonry ✅ https://beanthemes.com/masonry-css/ https://justjavascript.com/
+- [ ] Carousal
 ### Page 
-- [ ] Blog
+- [ ] Single Blog
 - [ ] Archive
 - [ ] Test1
 - [ ] Test2
+### Page Interaction
+- [ ] Parallax scroll
+- [ ] Deep Sea Visualization
+- [ ] The full page quiz 
+- [ ] The full page scroll snap https://www.thairath.co.th/spotlight/platu
+- [ ] The two side scroll https://projects.punchup.world/ceopath/

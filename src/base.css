@@ -35,6 +35,7 @@
 .--gray-border-element {
   border-color: var(--gray-element);
 }
+
 .--gray-background-element {
   background-color: var(--gray-element);
 }
@@ -60,42 +61,40 @@
 }
 
 /* Typo */
-.typo {
-  @apply normal-case
-}
 
-.typo.typo--snail {
+.typo--snail {
   font-size: 0.875rem;
 }
 
-.typo.typo--mouse {
+.typo--mouse {
   font-size: 1rem;
 }
 
-.typo.typo--otter {
+.typo--otter {
   font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
-.typo.typo--dolphin {
+.typo--dolphin {
   font-size: 1.625rem;
 }
 
-.typo.typo--hippo {
+.typo--hippo {
   font-size: 2rem;
 }
 
-.typo.typo--mammoth {
+.typo--mammoth {
   font-size: 3rem;
 }
 
 /* Components */
 .center {
-  @apply max-w-xl mx-auto flex justify-center items-center selection:bg-red-500 selection:text-white
+  @apply max-w-5xl mx-auto flex justify-center items-center selection:bg-red-500 selection:text-white
 }
 
 .center .center__item {
   background-color: var(--gray-backdrop);
-  @apply font-sans w-full flex justify-center items-center p-12 mx-5 my-10 --accent-rounded shadow-sm 
+  @apply font-sans w-full flex justify-center items-center p-12 mx-5 my-10 --accent-rounded shadow-sm
 }
 
 .gallery {
@@ -110,21 +109,44 @@
   @apply flex-col gap-4
 }
 
+/* Mansonry */
+.mansonry {
+  @apply grid sm:grid-cols-2 md:grid-cols-3 gap-4
+}
+
+.mansonry .mansonry__container {
+  @apply flex flex-col gap-4
+}
+
+.mansonry .mansonry__item {
+  @apply bg-white rounded-xl px-5 py-4 shadow-md
+}
+
+.mansonry .mansonry__item .mansonry__header {
+  @apply typo--otter font-bold --major-text-color w-full text-left line-clamp-2
+}
+
+.mansonry .mansonry__item .mansonry__description {
+  @apply mt-1 typo--snail font-medium opacity-90 --normal-text-color w-full text-left
+}
+
 /* ScrollBar */
 .scroll-bar::-webkit-scrollbar-track {
-	box-shadow: none;
-	background-color: rgba(0, 0, 0, 0.10);
+  box-shadow: none;
+  background-color: rgba(0, 0, 0, 0.10);
   border-radius: 8px;
 }
+
 .scroll-bar::-webkit-scrollbar {
-	width: 6px;
-	height: 6px;
-	background-color: #FFF;
+  width: 6px;
+  height: 6px;
+  background-color: #FFF;
   border-radius: 8px;
 }
+
 .scroll-bar::-webkit-scrollbar-thumb {
-	background-color: #6E6F73;
-	border: 0px solid #fff;
+  background-color: #6E6F73;
+  border: 0px solid #fff;
   border-radius: 8px;
   box-shadow: none;
 }
@@ -171,6 +193,50 @@
 }
 
 
+/* Circular Progress */
+.circular-progress {
+  will-change: transform;
+  backface-visibility: hidden;
+  @apply p-5 mx-auto relative
+}
+
+.circular-progress .circular-progress__circular {
+  width: 310px;
+  height: 310px;
+  @apply flex relative items-center justify-center bg-white rounded-full
+}
+
+.circular-progress .circular-progress__circular svg {
+  width: 310px;
+  height: 310px;
+  transform: rotate(-90deg);
+}
+
+.circular-progress .circular-progress__circular svg circle {
+  width: 310px;
+  height: 310px;
+  fill: none;
+  stroke-width: 10;
+  stroke: #000;
+  transform: translate(5px, 5px);
+  stroke-dasharray: 950;
+  stroke-dashoffset: 950;
+  stroke-linecap: round;
+}
+.circular-progress .circular-progress__circular svg circle:nth-child(1) {
+  stroke-dashoffset: 0;
+  stroke: #f3f3f3;
+}
+.circular-progress .circular-progress__circular svg circle:nth-child(2) {
+  stroke-dashoffset: calc(950 - (950 * 0)/100);
+  stroke: var(--accent-color);
+  transition: stroke-dashoffset 0.25s ease-out;
+}
+
+.circular-progress .circular-progress__number {
+  @apply absolute top-0 left-0 w-full h-full flex items-center justify-center z-10 --major-text-color font-semibold typo--mammoth
+}
+
 /* FAB */
 .fab.fab--bl {
   @apply bottom-2 left-2
@@ -194,7 +260,7 @@
 }
 
 .modal .modal__container {
-  @apply relative flex h-full w-full justify-center items-center my-10 --minor-text-color 
+  @apply relative flex h-full w-full justify-center items-center my-10 --minor-text-color
 }
 
 .modal .modal__container .modal__backdrop {
@@ -206,43 +272,158 @@
 }
 
 .modal .modal__container .modal__dialog .modal__header {
-  @apply  typo typo--otter font-bold --major-text-color w-full text-left
+  @apply typo--otter font-bold --major-text-color w-full text-left
 }
+
 .modal .modal__container .modal__dialog .modal__body {
-  @apply w-full typo typo--snail font-normal --minor-text-color
+  @apply w-full typo--snail font-normal --minor-text-color
 }
 
 .modal .modal__container .modal__dialog .modal__close-btn {
   @apply absolute cursor-pointer --accent-text-color font-medium top-1.5 right-1.5
 }
 
-/* Card */
+/* Formal Card */
 .card {
   @apply rounded-xl
 }
 
-.card.card .card__container {
-  @apply px-5 py-4 flex flex-col gap-1
-}
-.card.card .card__container .card__header {
-  @apply typo typo--otter font-bold --major-text-color w-full text-left
-}
-.card.card .card__container .card__description {
-  @apply typo typo--snail font-normal --minor-text-color w-full text-left line-clamp-2
+.card.card--formal .card__container {
+  @apply px-5 py-4 flex flex-col
 }
 
-.card.card--vertical {
+.card.card--formal .card__container .card__header {
+  @apply typo--otter font-bold --major-text-color w-full text-left line-clamp-2
+}
+
+.card.card--formal .card__container .card__description {
+  @apply mt-1 typo--mouse font-normal --normal-text-color w-full text-left line-clamp-2
+}
+
+.card.card--formal .card__container .card__category {
+  @apply mb-1 typo--snail font-semibold --minor-text-color w-full text-left uppercase
+}
+
+.card.card--formal .card__container .card__footer {
+  @apply opacity-50 flex justify-between
+}
+
+.card.card--formal .card__container .card__footer .card__time {
+  @apply mt-2 typo--snail font-semibold --minor-text-color w-full text-right
+}
+
+.card.card--formal .card__container .card__footer .card__author {
+  @apply flex gap-1 items-center mt-2 typo--snail font-semibold --minor-text-color w-full text-left
+}
+
+.card.card--formal .card__container .card__footer .card__author .card__author-avatar {
+  @apply w-5 h-5
+}
+
+.card.card--formal.card--vertical {
   @apply shadow max-w-xs flex flex-col
 }
-.card.card--vertical .card__img {
+
+.card.card--formal.card--vertical .card__img {
   @apply rounded-t-xl h-52 w-full
 }
 
-.card.card--horizontal {
-  @apply shadow max-w-xs flex flex-row
+.card.card--formal.card--horizontal {
+  @apply shadow flex flex-row
 }
-.card.card--horizontal .card__img {
-  @apply rounded-l-xl h-52 w-2/4 object-cover
+
+.card.card--formal.card--horizontal .card__img {
+  @apply rounded-l-md h-auto w-2/4 object-cover
+}
+
+/* Borderless Card */
+.card.card--borderless.card--vertical {
+  @apply max-w-xs flex flex-col
+}
+
+.card.card--borderless.card--vertical .card__img {
+  @apply rounded-xl h-52 w-full
+}
+
+.card.card--borderless .card__container {
+  @apply px-0 py-2 flex flex-col
+}
+
+.card.card--borderless .card__container .card__header {
+  @apply typo--otter font-bold --major-text-color w-full text-left line-clamp-2
+}
+
+.card.card--borderless .card__container .card__description {
+  @apply mt-1 typo--mouse font-normal --normal-text-color w-full text-left line-clamp-2
+}
+
+.card.card--borderless .card__container .card__category {
+  @apply mb-0 typo--snail font-semibold --minor-text-color w-full text-left uppercase
+}
+
+.card.card--borderless .card__container .card__footer {
+  @apply opacity-50 flex justify-between
+}
+
+.card.card--borderless .card__container .card__footer .card__time {
+  @apply mt-2 typo--snail font-semibold --minor-text-color w-full text-right
+}
+
+.card.card--borderless .card__container .card__footer .card__author {
+  @apply flex gap-1 items-center mt-2 typo--snail font-semibold --minor-text-color w-full text-left
+}
+
+.card.card--borderless .card__container .card__footer .card__author .card__author-avatar {
+  @apply w-5 h-5
+}
+
+.card.card--borderless.card--horizontal {
+  @apply flex flex-row gap-4
+}
+
+.card.card--borderless.card--horizontal .card__img {
+  @apply --accent-rounded h-auto w-2/4 object-cover
+}
+
+/* Compact Card */
+.card.card--compact {
+  @apply rounded-md max-w-xs
+}
+
+.card.card--compact.card--vertical {
+  @apply max-w-xs w-72 flex flex-col
+}
+
+.card.card--compact .card__container {
+  @apply px-5 py-4 w-full h-full flex flex-col
+}
+
+.card.card--compact .card__container .card__header {
+  @apply typo--otter font-bold --major-text-white w-full text-left line-clamp-2
+}
+
+.card.card--compact .card__container .card__description {
+  @apply mt-1 typo--mouse font-normal opacity-80 --major-text-white w-full text-left line-clamp-2
+}
+
+.card.card--compact .card__container .card__category {
+  @apply mb-0 typo--snail font-semibold opacity-50 --major-text-white w-full text-left uppercase
+}
+
+.card.card--compact .card__container .card__footer {
+  @apply opacity-50 flex justify-between
+}
+
+.card.card--compact .card__container .card__footer .card__time {
+  @apply mt-2 typo--snail font-semibold --major-text-white w-full text-right
+}
+
+.card.card--compact .card__container .card__footer .card__author {
+  @apply flex gap-1 items-center mt-2 typo--snail font-semibold --major-text-white w-full text-left
+}
+
+.card.card--compact .card__container .card__footer .card__author .card__author-avatar {
+  @apply w-5 h-5
 }
 
 /* Dropdown */
@@ -300,11 +481,16 @@
 .input .input__field .input__icon {
   @apply absolute top-2 left-1 --minor-text-color
 }
+
 .input .input__field .input--icon {
   @apply text-sm --major-text-color font-medium border --gray-border-element --accent-rounded py-1 pl-8 pr-3 my-1 w-full outline-none
 }
 
 .input .input__field .input--non-icon {
+  @apply text-sm --major-text-color font-medium border --gray-border-element --accent-rounded py-1 px-3 my-1 w-full outline-none
+}
+
+.input .input__field .input--citizen-id {
   @apply text-sm --major-text-color font-medium border --gray-border-element --accent-rounded py-1 px-3 my-1 w-full outline-none
 }
 
@@ -369,9 +555,11 @@
 .input .datepicker__container .datepicker__dates .datepicker__date {
   @apply flex cursor-default justify-center items-center text-xs h-7 rounded-full font-bold
 }
+
 .input .datepicker__container .datepicker__dates .datepicker__date.--inactive {
   @apply --normal-text-color
 }
+
 .input .datepicker__container .datepicker__dates .datepicker__date.--active {
   @apply --accent-background-color --major-text-white
 }
@@ -380,27 +568,35 @@
 .table {
   @apply bg-white p-4 shadow-sm --accent-rounded relative
 }
+
 .table .table_container {
   @apply w-full whitespace-nowrap
 }
+
 .table .table_container .table__head {
-  @apply sticky top-0 bg-white shadow-sm 
+  @apply sticky top-0 bg-white shadow-sm
 }
+
 .table .table_container .table__head .table__head-items {
   @apply h-auto text-sm leading-none bg-white --minor-text-color focus:outline-none
 }
+
 .table .table_container .table__head .table__head-items .table__head-item {
   @apply font-medium text-base p-2 uppercase
 }
+
 .table .table_container .table__body {
   @apply capitalize
 }
+
 .table .table_container .table__body .table_body-item {
   @apply h-10 text-sm leading-none --minor-text-color bg-white border-b border-gray-100 focus:outline-none
 }
+
 .table .table__endline {
   @apply flex justify-center items-center
 }
+
 .table .table__endline .table__endline--line {
   @apply h-0.5 border-none w-1/3 bg-gray-100 rounded-full mt-4 mb-2
 }
@@ -424,7 +620,7 @@
 }
 
 .checkbox .checkbox__label {
-  @apply typo typo--otter transition-all duration-150 --minor-text-color
+  @apply typo--otter transition-all duration-150 --minor-text-color
 }
 
 /* Tabs */
