@@ -24,8 +24,8 @@
 - [x] Borderless Card (like sem rush) ✅
 - [x] Compact Card (like peter h work) ✅
 - [x] Digital ID ✅
+- [x] Circular Progress ✅ // TODO: need to refactor in simple way
 - [ ] Accordian
-- [ ] Circular Progress
 - [ ] Typing page
 - [ ] Drawer
 - [ ] Scroll spy
