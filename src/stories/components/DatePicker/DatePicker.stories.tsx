@@ -12,6 +12,7 @@ export default {
   component: DatePicker,
 };
 
+
 export const DatePickerInput = () => {
   const [dateValue, setDateValue] = useState(moment());
 

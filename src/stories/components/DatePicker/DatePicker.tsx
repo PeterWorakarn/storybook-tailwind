@@ -14,7 +14,7 @@ type DatePickerTypes = {
   onAction: (date: Moment) => void;
 }
 
-const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']; // 0 - 6
 enum MONTHS {
   'January' = 'January',
   'February' = 'February',
@@ -28,67 +28,30 @@ enum MONTHS {
   'October' = 'October',
   'November' = 'November',
   'December' = 'December'
+  // TODO: Language locale still broken when user using thai month
 }
 
 const monthArr = Object.values(MONTHS)
 
 export const DatePicker: FC<DatePickerTypes> = (props) => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const [month, setMonth] = useState<MONTHS>(MONTHS[moment(props.dateValue).format('MMMM') as MONTHS])
-  const [year, setYear] = useState(moment(props.dateValue).format('YYYY'))
-  const [blankDay, setBlankDay] = useState(moment(props.dateValue).startOf('month').format('ddd'))
-  const [daysInMonth, setDaysInMonth] = useState<number>(moment(props.dateValue).daysInMonth());
-
-  useEffect(() => {
-    // recalculate days in month
-    setDaysInMonth(moment(`${month} ${year}`).daysInMonth())
-    // recalculate blankDays in month
-    setBlankDay(moment(`${month} ${year}`).startOf('month').format('ddd'))
-  }, [month, year])
-
-  const onPrevMonth = (currentMonth: MONTHS) => {
-    // find current position
-    const currentPos = monthArr.indexOf(currentMonth)
-    if (currentPos !== 0) {
-      setMonth(monthArr[currentPos - 1])
-    } else {
-      // do something to change new year
-      setYear(`${parseInt(year) - 1}`)
-      // do something to reset month
-      setMonth(monthArr[11])
-    }
-    // 
-  }
-  const onNextMonth = (currentMonth: MONTHS) => {
-    const currentPos = monthArr.indexOf(currentMonth)
-    if (currentPos !== 11) {
-      setMonth(monthArr[currentPos + 1])
-    } else {
-      // do something to change new year
-      setYear(`${parseInt(year) + 1}`)
-      // do something to reset month
-      setMonth(monthArr[0])
-    }
-  }
-  const onSelectDate = (currentDay: number, currentMonth: MONTHS, currentYear: string) => {
-    const selectDate = moment(`${currentDay} ${currentMonth} ${currentYear}`, 'DD MMM YYYY')
-    // console.log(moment(selectDate).format('DD MMM YYYY'))
-    // console.log(moment(selectDate).toDate())
-    props.setDateValue(selectDate)
-    props.onAction(selectDate)
-  }
-
-  const isCurrentDate = (day: number) => {
-    if (moment(props.dateValue).format('D') === `${day}` && moment(props.dateValue).format('MMMM') === month && moment(props.dateValue).format('YYYY') === year) {
-      return true;
-    }
-    return false;
-  }
+  const [tempDate, setTempDate] = useState<moment.Moment>(props.dateValue);
 
   // onClickOutside condition
   const onClickOutside = (value: boolean) => {
     setIsOpen(value)
+  }
+
+  const onSelectDate = (selectDate: number, date: moment.Moment) => {
+    props.setDateValue(moment(date).set("date", selectDate))
+    props.onAction(moment(date).set("date", selectDate))
+  }
+
+  const onPrevMonth = (currentDate: moment.Moment) => {
+    setTempDate(moment(currentDate).subtract(1, 'months'))
+  }
+  const onNextMonth = (currentDate: moment.Moment) => {
+    setTempDate(moment(currentDate).add(1, 'months'))
   }
 
   return (
@@ -117,12 +80,12 @@ export const DatePicker: FC<DatePickerTypes> = (props) => {
         <div className={`${isOpen ? 'opacity-100' : 'opacity-0'} datepicker__container `}>
           <div className="datepicker__header">
             <div className="flex justify-start items-center gap-2 w-3/4">
-              <p className="datepicker__month">{month}</p>
-              <p className="datepicker__year">{year}</p>
+              <p className="datepicker__month">{moment(tempDate).format('MMMM')}</p>
+              <p className="datepicker__year">{moment(tempDate).format('YYYY')}</p>
             </div>
             <div className="flex justify-center items-end gap-1 w-1/4">
-              <HiChevronLeft onClick={() => onPrevMonth(month)} className="datepicker__icon" />
-              <HiChevronRight onClick={() => onNextMonth(month)} className="datepicker__icon" />
+              <HiChevronLeft onClick={() => onPrevMonth(tempDate)} className="datepicker__icon" />
+              <HiChevronRight onClick={() => onNextMonth(tempDate)} className="datepicker__icon" />
             </div>
           </div>
           <div className="datepicker__days -mx-1">
@@ -131,12 +94,11 @@ export const DatePicker: FC<DatePickerTypes> = (props) => {
             })}
           </div>
           <div className="datepicker__dates">
-            {Array.from({ length: DAYS.indexOf(blankDay)}, (_, i) => i + 1).map((blank) => {
+            {Array.from({ length: parseInt(moment(tempDate).startOf('month').format('d')) }, (_, i) => i + 1).map((blank) => {
               return <span key={blank} className="datepicker__blank-date" style={{ width: '14.18%' }} />
             })}
-            {/* Calculate how many days of that months  */}
-            {Array.from({ length: daysInMonth }, (_, i) => i + 1).map((dayInMonth) => {
-              return <span key={dayInMonth} onClick={() => onSelectDate(dayInMonth, month, year)} className={`datepicker__date ${isCurrentDate(dayInMonth) ? '--active' : '--inactive'}`} style={{ width: '14.18%' }}>{dayInMonth}</span>
+            {Array.from({ length: moment(tempDate).daysInMonth() }, (_, i) => i + 1).map((dayInMonth) => {
+              return <span key={dayInMonth} onClick={() => onSelectDate(dayInMonth, tempDate)} className={`datepicker__date ${moment(tempDate).set("date", dayInMonth).format('D MM YYYY') === moment(props.dateValue).format('D MM YYYY') ? '--active' : '--inactive'}`} style={{ width: '14.18%' }}>{dayInMonth}</span>
             })}
           </div>
         </div>
