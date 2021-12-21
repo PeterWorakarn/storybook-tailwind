@@ -26,6 +26,7 @@
 - [x] Digital ID ✅
 - [x] Circular Progress ✅ // TODO: need to refactor in simple way
 - [ ] Accordian
+- [ ] Progress bar
 - [ ] Typing page
 - [ ] Drawer
 - [ ] Scroll spy

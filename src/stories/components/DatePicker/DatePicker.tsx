@@ -9,9 +9,9 @@ type DatePickerTypes = {
   helper: string;
   label: string;
   isRequired: boolean;
-  dateValue: Date;
-  setDateValue: (date: Date) => void;
-  onAction: (date: Date) => void;
+  dateValue: Moment;
+  setDateValue: (date: Moment) => void;
+  onAction: (date: Moment) => void;
 }
 
 const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -75,8 +75,8 @@ export const DatePicker: FC<DatePickerTypes> = (props) => {
     const selectDate = moment(`${currentDay} ${currentMonth} ${currentYear}`, 'DD MMM YYYY')
     // console.log(moment(selectDate).format('DD MMM YYYY'))
     // console.log(moment(selectDate).toDate())
-    props.setDateValue(moment(selectDate).toDate())
-    props.onAction(moment(selectDate).toDate())
+    props.setDateValue(selectDate)
+    props.onAction(selectDate)
   }
 
   const isCurrentDate = (day: number) => {

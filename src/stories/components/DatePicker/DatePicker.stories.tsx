@@ -1,6 +1,6 @@
 /* eslint-disable import/no-anonymous-default-export */
 import { action } from "@storybook/addon-actions";
-import moment from "moment-timezone";
+import moment, { Moment } from "moment-timezone";
 import React from "react";
 import { useState } from "react";
 import { textSizeType } from "../../../constant-enum-types";
@@ -13,7 +13,7 @@ export default {
 };
 
 export const DatePickerInput = () => {
-  const [dateValue, setDateValue] = useState(new Date());
+  const [dateValue, setDateValue] = useState(moment());
 
   return (
     <DatePicker
@@ -23,7 +23,7 @@ export const DatePickerInput = () => {
       isRequired={true}
       dateValue={dateValue}
       onAction={action('Select Date')}
-      setDateValue={(date: Date) => setDateValue(date)}
+      setDateValue={(date: Moment) => setDateValue(date)}
     />
   )
 }
