@@ -15,23 +15,6 @@ type DatePickerTypes = {
 }
 
 const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']; // 0 - 6
-enum MONTHS {
-  'January' = 'January',
-  'February' = 'February',
-  'March' = 'March',
-  'April' = 'April',
-  'May' = 'May',
-  'June' = 'June',
-  'July' = 'July',
-  'August' = 'August',
-  'September' = 'September',
-  'October' = 'October',
-  'November' = 'November',
-  'December' = 'December'
-  // TODO: Language locale still broken when user using thai month
-}
-
-const monthArr = Object.values(MONTHS)
 
 export const DatePicker: FC<DatePickerTypes> = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -79,7 +62,7 @@ export const DatePicker: FC<DatePickerTypes> = (props) => {
         </div>
         <div className={`${isOpen ? 'opacity-100' : 'opacity-0'} datepicker__container `}>
           <div className="datepicker__header">
-            <div className="flex justify-start items-center gap-2 w-3/4">
+            <div className="flex justify-start items-center gap-1 w-3/4">
               <p className="datepicker__month">{moment(tempDate).format('MMMM')}</p>
               <p className="datepicker__year">{moment(tempDate).format('YYYY')}</p>
             </div>
