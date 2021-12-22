@@ -25,10 +25,11 @@
 - [x] Compact Card (like peter h work) ✅
 - [x] Digital ID ✅
 - [x] Circular Progress ✅ // TODO: need to refactor in simple way
-- [ ] Accordian
+- [ ] Accordian //
+- [ ] Drawer //
+- [x] Skew Card https://codepen.io/victorwork/pen/OEGKrP // separate skew card from normal card ✅
 - [ ] Progress bar
 - [ ] Typing page
-- [ ] Drawer
 - [ ] Scroll spy
 - [ ] Tab bar
 - [ ] Typo Badges https://tailwind-elements.com/docs/standard/components/badges/
@@ -37,7 +38,6 @@
 - [ ] Dropdown with Search
 - [ ] Progress bar
 - [ ] Dark mode
-- [ ] Skew Card https://codepen.io/victorwork/pen/OEGKrP
 - [ ] Neumorphic Card
 - [ ] Glassmorism Card
 - [ ] Skeleton Loading

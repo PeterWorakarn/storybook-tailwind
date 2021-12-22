@@ -119,7 +119,7 @@
 }
 
 .mansonry .mansonry__item {
-  @apply bg-white rounded-xl px-5 py-4 shadow-md
+  @apply bg-white rounded-xl px-5 py-4 shadow
 }
 
 .mansonry .mansonry__item .mansonry__header {
@@ -192,6 +192,42 @@
   @apply w-4 h-4
 }
 
+
+/* Accordion */
+.accordion-group {
+  @apply flex flex-col --accent-rounded w-full max-w-sm shadow
+}
+.accordion-group .accordion:not(:last-child) {
+  @apply border-b-2 --gray-border-element
+}
+.accordion-group .accordion:first-child {
+  @apply rounded-t-md
+}
+.accordion-group .accordion:last-child {
+  @apply rounded-b-md
+}
+
+.accordion .accordion__container {
+  @apply flex justify-between items-center pt-5 pb-4 px-5
+}
+.accordion.--inactive {
+  @apply opacity-70 bg-opacity-70 bg-white hover:opacity-100 hover:bg-opacity-100
+}
+.accordion.--active {
+  @apply opacity-100 bg-opacity-100 bg-white
+}
+.accordion .accordion__container {
+  @apply cursor-pointer
+}
+.accordion .accordion__container .accordion__header {
+  @apply typo--otter font-semibold --major-text-color cursor-pointer
+}
+.accordion .accordion__container .accordion__toggle {
+  @apply w-6 h-6 cursor-pointer
+}
+.accordion .accordion__info {
+  @apply typo--mouse font-normal px-5 --minor-text-color
+}
 
 /* Circular Progress */
 .circular-progress {
