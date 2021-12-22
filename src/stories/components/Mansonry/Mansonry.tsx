@@ -2,7 +2,8 @@ import React, { FC } from 'react';
 import '../../../base.css'
 
 type MansonryTypes = {
-
+  isSkew: boolean;
+  isHidden: boolean;
 }
 
 const dumpData = [
@@ -56,7 +57,7 @@ export const Mansonry: FC<MansonryTypes> = (props) => {
 
   return (
     <div className="mansonry">
-      <div className="mansonry__container">
+      <div className={`mansonry__container transform-gpu  ${props.isHidden && 'overflow-hidden'} ${props.isSkew && 'rotate-3 -skew-x-1'}`}>
         {dumpData.filter((i, index) => {
           return index === 0 || index === 3 || index === 6 || index === 9
         }).map((i, index) => {
@@ -68,7 +69,7 @@ export const Mansonry: FC<MansonryTypes> = (props) => {
           )
         })}
       </div>
-      <div className="mansonry__container">
+      <div className={`mansonry__container transform-gpu ${props.isHidden && 'overflow-hidden'} ${props.isSkew && 'rotate-3 -skew-x-1'}`}>
         {dumpData.filter((i, index) => {
           return index === 1 || index === 4 || index === 7 || index === 10
         }).map((i, index) => {
@@ -80,7 +81,7 @@ export const Mansonry: FC<MansonryTypes> = (props) => {
           )
         })}
       </div>
-      <div className="mansonry__container">
+      <div className={`mansonry__container transform-gpu  ${props.isHidden && 'overflow-hidden'} ${props.isSkew && 'rotate-3 -skew-x-1'}`}>
         {dumpData.filter((i, index) => {
           return index === 2 || index === 5 || index === 8 || index === 11
         }).map((i, index) => {

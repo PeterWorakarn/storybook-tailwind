@@ -7,7 +7,16 @@ export default {
   title: "Layout",
   component: Mansonry,
   argTypes: {
-
+    isHidden: {
+      name: 'isHidden',
+      defaultValue: false,
+      control: { type: 'boolean' }
+    },
+    isSkew: {
+      name: 'isSkew',
+      defaultValue: false,
+      control: { type: 'boolean' }
+    },
   }
 };
 
