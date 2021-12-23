@@ -198,7 +198,7 @@
   @apply flex flex-col --accent-rounded w-full max-w-sm shadow
 }
 .accordion-group .accordion:not(:last-child) {
-  @apply border-b-2 --gray-border-element
+  @apply border-b --gray-border-element
 }
 .accordion-group .accordion:first-child {
   @apply rounded-t-md
