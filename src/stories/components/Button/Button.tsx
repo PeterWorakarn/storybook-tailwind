@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
-import { VariantType } from '../../../constant-enum-types';
+import { textHTMLtag, textSizeType, VariantType } from '../../../constant-enum-types';
 import '../../../base.css'
 import { HiBeaker } from 'react-icons/hi';
+import { Typo } from '../Typo/Typo';
 
 type ButtonTypes = {
   label: string;
@@ -47,7 +48,7 @@ export const Button: FC<ButtonTypes> = (props) => {
         `}
     >
       {props.icon ? props.icon : <HiBeaker className="btn__icon" />}
-      <span className="btn__label">{props.label ? props.label : 'Upload'}</span>
+      <Typo variant={textHTMLtag.SPAN} size={textSizeType.SNAIL} className="btn__label">{props.label ? props.label : 'Upload'}</Typo>
     </button>
   )
 };

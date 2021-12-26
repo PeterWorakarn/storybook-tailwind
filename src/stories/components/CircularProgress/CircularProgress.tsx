@@ -1,5 +1,7 @@
 import React, { FC } from 'react';
 import '../../../base.css';
+import { textHTMLtag, textSizeType } from '../../../constant-enum-types';
+import { Typo } from '../Typo/Typo';
 
 type CircularProgressType = {
   value: number
@@ -16,9 +18,7 @@ export const CircularProgress: React.FC<CircularProgressType> = (props) => {
             cx="150" cy="150" r="150"></circle>
         </svg>
       </div>
-      <div className="circular-progress__number">
-        <p>{props.value}%</p>
-      </div>
+      <Typo size={textSizeType.MAMMOTH} variant={textHTMLtag.P} className="circular-progress__number">{props.value}%</Typo>
     </div>
   );
 };

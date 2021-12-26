@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@storybook/addon-storysource": "^6.4.9",
+    "@storybook/preset-typescript": "^3.0.0",
     "@storybook/theming": "^6.3.12",
     "@tailwindcss/line-clamp": "^0.3.0",
     "@testing-library/jest-dom": "^5.15.0",

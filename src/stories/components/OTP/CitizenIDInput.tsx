@@ -1,6 +1,8 @@
 import React, { FC, useState } from 'react';
 import { HiExclamationCircle } from 'react-icons/hi';
 import '../../../base.css';
+import { textHTMLtag, textSizeType } from '../../../constant-enum-types';
+import { Typo } from '../Typo/Typo';
 
 type CitizenIDInputTypes = {
   name: string;
@@ -8,7 +10,7 @@ type CitizenIDInputTypes = {
   label: string;
   isError: boolean;
   isRequired: boolean;
-  values:string;
+  values: string;
   setValues: (value: string) => void;
   onAction: (value: string) => void;
 }
@@ -19,7 +21,7 @@ const checkRenderFormat = (index: number) => {
   }
   return false
 }
-const renderFormat = (citizenID:string) => {
+const renderFormat = (citizenID: string) => {
   if (citizenID.length === 0) {
     return ''
   }
@@ -31,7 +33,7 @@ const renderFormat = (citizenID:string) => {
     return each
   }).join('')
 }
-const extractOnlyNumber = (citizenID:string) => {
+const extractOnlyNumber = (citizenID: string) => {
   return citizenID.replaceAll(' - ', '');
 }
 
@@ -67,13 +69,13 @@ export const CitizenIDInput: FC<CitizenIDInputTypes> = (props) => {
     <div className="input">
       <div className="label__container">
         <label className="label" htmlFor={`${props.name}`}>
-          <p>{props.label ? props.label : 'text'}{props.isRequired && <i className="not-italic text-red-500">*</i>}</p>
+          <Typo size={textSizeType.SNAIL} variant={textHTMLtag.P}>{props.label ? props.label : 'text'}{props.isRequired && <i className="not-italic text-red-500">*</i>}</Typo>
         </label>
         {props.isError && <HiExclamationCircle className="error" />}
       </div>
       <div className="input__field">
         <input
-        className="input--citizen-id"
+          className="input--citizen-id"
           id={props.name ? props.name : 'text'}
           name={props.name ? props.name : 'text'}
           value={renderCitizenID}

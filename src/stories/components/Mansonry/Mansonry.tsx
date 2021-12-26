@@ -1,5 +1,7 @@
 import React, { FC } from 'react';
 import '../../../base.css'
+import { textHTMLtag, textSizeType } from '../../../constant-enum-types';
+import { Typo } from '../Typo/Typo';
 
 type MansonryTypes = {
   isSkew: boolean;
@@ -63,8 +65,8 @@ export const Mansonry: FC<MansonryTypes> = (props) => {
         }).map((i, index) => {
           return (
             <article key={index} className="mansonry__item">
-              <h1 className="mansonry__header">{i.title}</h1>
-              <p className="mansonry__description">{i.description}</p>
+              <Typo className="mansonry__header" variant={textHTMLtag.H1} size={textSizeType.OTTER} >{i.title}</Typo>
+              <Typo className="mansonry__description" variant={textHTMLtag.P} size={textSizeType.SNAIL} >{i.description}</Typo>
             </article>
           )
         })}
@@ -75,8 +77,8 @@ export const Mansonry: FC<MansonryTypes> = (props) => {
         }).map((i, index) => {
           return (
             <article key={index} className="mansonry__item">
-              <h1 className="mansonry__header">{i.title}</h1>
-              <p className="mansonry__description">{i.description}</p>
+              <Typo className="mansonry__header" variant={textHTMLtag.H1} size={textSizeType.OTTER} >{i.title}</Typo>
+              <Typo className="mansonry__description" variant={textHTMLtag.P} size={textSizeType.SNAIL} >{i.description}</Typo>
             </article>
           )
         })}
@@ -87,8 +89,8 @@ export const Mansonry: FC<MansonryTypes> = (props) => {
         }).map((i, index) => {
           return (
             <article key={index} className="mansonry__item">
-              <h1 className="mansonry__header">{i.title}</h1>
-              <p className="mansonry__description">{i.description}</p>
+              <Typo className="mansonry__header" variant={textHTMLtag.H1} size={textSizeType.OTTER} >{i.title}</Typo>
+              <Typo className="mansonry__description" variant={textHTMLtag.P} size={textSizeType.SNAIL} >{i.description}</Typo>
             </article>
           )
         })}

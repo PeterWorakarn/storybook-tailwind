@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
 import { BsCheckLg } from 'react-icons/bs';
 import '../../../base.css'
+import { textHTMLtag, textSizeType } from '../../../constant-enum-types';
+import { Typo } from '../Typo/Typo';
 
 type CheckboxTypes = {
     name: string;
@@ -31,9 +33,9 @@ export const Checkbox: FC<CheckboxTypes> = (props) => {
                 onClick={() => handleCheckbox(props.checkboxValue)}
                 checked={props.checkboxValue}
             />
-            <span  className={`checkbox__label ${props.checkboxValue ? 'font-normal' : 'font-normal'}`}>
+            <Typo variant={textHTMLtag.SPAN} size={textSizeType.OTTER}  className={`checkbox__label ${props.checkboxValue ? 'font-normal' : 'font-normal'}`}>
                 {props.label ? props.label : 'Option'}
-            </span>
+            </Typo>
         </label>
     );
 };

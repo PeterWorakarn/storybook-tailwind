@@ -2,8 +2,9 @@
 import { action } from "@storybook/addon-actions";
 import React from "react";
 import { useState } from "react";
-import { VariantType } from "../../../constant-enum-types";
+import { textHTMLtag, textSizeType, VariantType } from "../../../constant-enum-types";
 import { Button } from "../Button/Button";
+import { Typo } from "../Typo/Typo";
 import { Modal } from "./Modal";
 
 
@@ -27,31 +28,52 @@ export default {
 export const DialogModal = (args: any) => {
   const [modal, setModal] = useState(false);
   return (
-    <Modal modal={modal} setModal={setModal} {...args}>
-      <p className="text-gray-400">Necessitatibus iusto sapiente non. Fuga id ducimus voluptatibus voluptas. Qui occaecati est neque et qui.</p>
-    </Modal>
+    <>
+      <Button
+        label="Modal"
+        variant={VariantType.TERTIARY}
+        onClick={() => setModal(true)}
+      />
+      <Modal {...args} visible={modal} onClose={() => setModal(false)}>
+        <Typo variant={textHTMLtag.P} size={textSizeType.SNAIL} className="text-gray-400 font-medium">Necessitatibus iusto sapiente non. Fuga id ducimus voluptatibus voluptas. Qui occaecati est neque et qui.</Typo>
+      </Modal>
+    </>
   )
 }
 export const NoticeModal = (args: any) => {
   const [modal, setModal] = useState(false);
   return (
-    <Modal modal={modal} setModal={setModal} {...args}>
-      <p className="text-gray-400 pb-3">Necessitatibus iusto sapiente non. Fuga id ducimus voluptatibus voluptas. Qui occaecati est neque et qui.</p>
-      <Button icon={<></>} isFull onClick={() => setModal(false)} label="OK" variant={VariantType.SECONDARY} />
-    </Modal>
+    <>
+      <Button
+        label="Modal"
+        variant={VariantType.TERTIARY}
+        onClick={() => setModal(true)}
+      />
+      <Modal {...args} visible={modal} onClose={() => setModal(false)}>
+        <Typo variant={textHTMLtag.P} size={textSizeType.SNAIL} className="text-gray-400 font-medium pb-3">Necessitatibus iusto sapiente non. Fuga id ducimus voluptatibus voluptas. Qui occaecati est neque et qui.</Typo>
+        <Button icon={<></>} isFull onClick={() => setModal(false)} label="OK" variant={VariantType.SECONDARY} />
+      </Modal>
+    </>
   )
 }
 
 export const ColModal = (args: any) => {
   const [modal, setModal] = useState(false);
   return (
-    <Modal {...args} modal={modal} setModal={setModal}>
-      <p className="pb-3 text-gray-400">Necessitatibus iusto sapiente non. Fuga id ducimus voluptatibus voluptas. Qui occaecati est neque et qui.</p>
-      <div className="grid grid-cols-2 gap-2">
-        <Button icon={<></>} isFull onClick={() => setModal(false)} label="OK" variant={VariantType.SECONDARY} />
-        <Button icon={<></>} isFull onClick={() => setModal(false)} label="Cancel" variant={VariantType.GHOST} />
-      </div>
-    </Modal>
+    <>
+      <Button
+        label="Modal"
+        variant={VariantType.TERTIARY}
+        onClick={() => setModal(true)}
+      />
+      <Modal {...args} visible={modal} onClose={() => setModal(false)}>
+        <Typo variant={textHTMLtag.P} size={textSizeType.SNAIL} className="text-gray-400 font-medium pb-3">Necessitatibus iusto sapiente non. Fuga id ducimus voluptatibus voluptas. Qui occaecati est neque et qui.</Typo>
+        <div className="grid grid-cols-2 gap-2">
+          <Button icon={<></>} isFull onClick={() => setModal(false)} label="OK" variant={VariantType.SECONDARY} />
+          <Button icon={<></>} isFull onClick={() => setModal(false)} label="Cancel" variant={VariantType.GHOST} />
+        </div>
+      </Modal>
+    </>
   )
 }
 

@@ -1,6 +1,8 @@
 import React, { FC, useState } from 'react';
 import { HiExclamationCircle, HiEye, HiEyeOff, HiLockClosed } from 'react-icons/hi';
 import '../../../base.css';
+import { textHTMLtag, textSizeType } from '../../../constant-enum-types';
+import { Typo } from '../Typo/Typo';
 
 type InputPasswordToggleTypes = {
   name: string;
@@ -23,7 +25,7 @@ export const InputPasswordToggle: FC<InputPasswordToggleTypes> = (props) => {
     <div className="input">
       <div className="label__container">
         <label className="label" htmlFor={`${props.name ? props.name : 'password'}`}>
-          <p>{props.label ? props.label : 'password'}{props.isRequired && <i className="not-italic text-red-500">*</i>}</p>
+          <Typo variant={textHTMLtag.P} size={textSizeType.SNAIL}>{props.label ? props.label : 'password'}{props.isRequired && <i className="not-italic text-red-500">*</i>}</Typo>
         </label>
         {props.isError && <HiExclamationCircle className="error" />}
       </div>

@@ -3,6 +3,8 @@ import React, { FC, useEffect } from 'react';
 import { useState } from 'react';
 import { HiCalendar, HiChevronLeft, HiChevronRight, HiOutlineCalendar } from 'react-icons/hi';
 import '../../../base.css'
+import { textHTMLtag, textSizeType } from '../../../constant-enum-types';
+import { Typo } from '../Typo/Typo';
 
 type DatePickerTypes = {
   name: string;
@@ -43,7 +45,7 @@ export const DatePicker: FC<DatePickerTypes> = (props) => {
       <div className="input relative z-20">
         <div className="label__container">
           <label className="label" htmlFor={`${props.name ? props.name : 'date'}`}>
-            <p>{props.label ? props.label : 'date'}{props.isRequired && <i className="not-italic text-red-500">*</i>}</p>
+            <Typo variant={textHTMLtag.P} size={textSizeType.SNAIL}>{props.label ? props.label : 'date'}{props.isRequired && <i className="not-italic text-red-500">*</i>}</Typo>
           </label>
         </div>
         <div onClick={() => setIsOpen((prev) => !prev)} className="input__field">
@@ -63,8 +65,8 @@ export const DatePicker: FC<DatePickerTypes> = (props) => {
         <div className={`${isOpen ? 'opacity-100' : 'opacity-0'} datepicker__container `}>
           <div className="datepicker__header">
             <div className="flex justify-start items-center gap-1 w-3/4">
-              <p className="datepicker__month">{moment(tempDate).format('MMMM')}</p>
-              <p className="datepicker__year">{moment(tempDate).format('YYYY')}</p>
+              <Typo size={textSizeType.SNAIL} variant={textHTMLtag.P} className="datepicker__month">{moment(tempDate).format('MMMM')}</Typo>
+              <Typo size={textSizeType.SNAIL} variant={textHTMLtag.P} className="datepicker__year">{moment(tempDate).format('YYYY')}</Typo>
             </div>
             <div className="flex justify-center items-end gap-1 w-1/4">
               <HiChevronLeft onClick={() => onPrevMonth(tempDate)} className="datepicker__icon" />

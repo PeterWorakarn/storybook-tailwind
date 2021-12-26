@@ -7,13 +7,14 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/addon-actions/register',
     '@storybook/addon-docs',
+    '@storybook/preset-typescript',
     '@storybook/addon-postcss',
     {
       name: '@storybook/addon-storysource',
       options: {
         loaderOptions: {
           prettierConfig: { printWidth: 80, singleQuote: false },
-          injectStoryParameters: true,
+          injectStoryParameters: false,
         },
       },
     },

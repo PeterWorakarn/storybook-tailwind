@@ -1,7 +1,8 @@
 import React, { FC, useState } from 'react';
 import { HiXCircle } from 'react-icons/hi';
 import '../../../base.css';
-import { borderVariant } from '../../../constant-enum-types';
+import { borderVariant, textHTMLtag, textSizeType } from '../../../constant-enum-types';
+import { Typo } from '../Typo/Typo';
 
 type TagsInputTypes = {
   name: string;
@@ -64,7 +65,7 @@ export const TagsInput: FC<TagsInputTypes> = (props) => {
       <div className="tag-input__tags">
         {props.valueData.map((tag, i) => (
           <span key={tag} className={`tag-input__tag ${variant(props.borderVariant)}`}>
-            {tag}
+            <Typo variant={textHTMLtag.SPAN} size={textSizeType.SNAIL}>{tag}</Typo>
             <button className="outline-none" type="button" onClick={() => removeTag(i)}><HiXCircle /></button>
           </span>
         ))}

@@ -1,4 +1,5 @@
 import { addons } from '@storybook/addons';
+import theme from './theme';
 
 addons.setConfig({
   isFullscreen: false,
@@ -7,7 +8,7 @@ addons.setConfig({
   panelPosition: 'right',
   enableShortcuts: true,
   isToolshown: false,
-  theme: undefined,
+  theme: theme,
   selectedPanel: undefined,
   initialActive: 'sidebar',
   sidebar: {

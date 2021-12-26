@@ -1,5 +1,7 @@
 import React, { FC, useState } from 'react';
 import '../../../base.css';
+import { textHTMLtag, textSizeType } from '../../../constant-enum-types';
+import { Typo } from '../Typo/Typo';
 
 type TagsTypes = {
   items: {
@@ -17,7 +19,7 @@ export const Tags: FC<TagsTypes> = (props) => {
   }
 
   return (
-    <div className="tag">
+    <div className="tag-chip">
       {props.items.map((tag: {
         icon?: React.ReactElement<any, string | React.JSXElementConstructor<any>> | undefined;
         title: string;
@@ -34,7 +36,10 @@ export const Tags: FC<TagsTypes> = (props) => {
               onChange={() => onSelectHandler(tag.title)}
             />
             <div className="tag__label">
-              {tag.icon}{tag.title}
+              {tag.icon}
+              <Typo size={textSizeType.SNAIL} variant={textHTMLtag.SPAN}>
+                {tag.title}
+              </Typo>
             </div>
           </label>
         );

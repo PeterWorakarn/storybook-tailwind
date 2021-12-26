@@ -1,6 +1,8 @@
 import React, { FC, useState } from 'react';
 import { HiExclamationCircle, HiGlobe, HiLockClosed, HiMail, HiOutlineGlobe, HiOutlineLockClosed, HiOutlineMail } from 'react-icons/hi';
 import '../../../base.css';
+import { textHTMLtag, textSizeType } from '../../../constant-enum-types';
+import { Typo } from '../Typo/Typo';
 
 type InputFieldTypes = {
   type: "text" | "password" | "mail" | "web";
@@ -39,7 +41,7 @@ export const InputField: FC<InputFieldTypes> = (props) => {
     <div className="input">
       <div className="label__container">
         <label className="label" htmlFor={`${props.name}`}>
-          <p>{props.label ? props.label : 'text'}{props.isRequired && <i className="not-italic text-red-500">*</i>}</p>
+          <Typo size={textSizeType.SNAIL} variant={textHTMLtag.P}>{props.label ? props.label : 'text'}{props.isRequired && <i className="not-italic text-red-500">*</i>}</Typo>
         </label>
         {props.isError && <HiExclamationCircle className="error" />}
       </div>
