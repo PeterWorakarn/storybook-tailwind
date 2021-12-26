@@ -31,7 +31,7 @@ export const DialogModal = (args: any) => {
     <>
       <Button
         label="Modal"
-        variant={VariantType.TERTIARY}
+        variant={VariantType.SECONDARY}
         onClick={() => setModal(true)}
       />
       <Modal {...args} visible={modal} onClose={() => setModal(false)}>
@@ -46,7 +46,7 @@ export const NoticeModal = (args: any) => {
     <>
       <Button
         label="Modal"
-        variant={VariantType.TERTIARY}
+        variant={VariantType.SECONDARY}
         onClick={() => setModal(true)}
       />
       <Modal {...args} visible={modal} onClose={() => setModal(false)}>
@@ -63,7 +63,7 @@ export const ColModal = (args: any) => {
     <>
       <Button
         label="Modal"
-        variant={VariantType.TERTIARY}
+        variant={VariantType.SECONDARY}
         onClick={() => setModal(true)}
       />
       <Modal {...args} visible={modal} onClose={() => setModal(false)}>

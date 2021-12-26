@@ -47,7 +47,7 @@ export const Button: FC<ButtonTypes> = (props) => {
         ${props.isRounded ? ROUNDED : NOT_SO_ROUND}
         `}
     >
-      {props.icon ? props.icon : <HiBeaker className="btn__icon" />}
+      {props.icon ? props.icon : null}
       <Typo variant={textHTMLtag.SPAN} size={textSizeType.SNAIL} className="btn__label">{props.label ? props.label : 'Upload'}</Typo>
     </button>
   )

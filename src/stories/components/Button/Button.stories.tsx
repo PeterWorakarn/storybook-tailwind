@@ -33,7 +33,7 @@ export default {
   }
 };
 
-export const CustomButton = (args: any) => <Button {...args} onClick={action('clicked')} />
+export const CustomButton = (args: any) => <Button {...args} icon={<HiBeaker className="w-4 h-4" />} onClick={action('clicked')} />
 export const ButtonGallery = () => {
   const label = "Upload";
   const isRounded = false;
