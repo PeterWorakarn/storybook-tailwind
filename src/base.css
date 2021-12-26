@@ -89,7 +89,7 @@
 
 /* Components */
 .center {
-  @apply max-w-5xl mx-auto flex justify-center items-center selection:bg-red-500 selection:text-white
+  @apply max-w-5xl mx-auto flex justify-center items-center selection:bg-red-500 selection:text-white overflow-hidden
 }
 
 .center .center__item {
@@ -290,6 +290,29 @@
   @apply top-2 right-2
 }
 
+/* Drawer */
+.drawer {
+  @apply fixed z-10 box-border overflow-hidden inset-0 outline-none 
+}
+.drawer .drawer__container {
+  @apply relative flex h-full w-full my-10
+}
+.drawer .drawer__container .drawer__backdrop {
+  @apply z-20 --gray-background-element absolute
+}
+.drawer .drawer__container .drawer__dialog {
+  @apply  w-full max-w-xs max-h-full bg-white shadow p-3 flex flex-col items-center capitalize
+}
+.drawer .drawer__container .drawer__dialog .drawer__close-btn {
+  @apply absolute cursor-pointer --accent-text-color font-medium top-1.5 right-1.5
+}
+.drawer .drawer__container .drawer__dialog .drawer__header {
+  @apply font-bold --major-text-color w-full text-left
+}
+.drawer .drawer__container .drawer__dialog .drawer__body {
+  @apply w-full font-normal --minor-text-color mt-2
+}
+
 /* Modal */
 .modal {
   @apply z-10 fixed box-border overflow-hidden inset-0 outline-none
@@ -300,7 +323,7 @@
 }
 
 .modal .modal__container .modal__backdrop {
-  @apply z-20 bg-gray-700 opacity-20 absolute h-full w-full
+  @apply z-20 --gray-background-element opacity-20 absolute h-full w-full
 }
 
 .modal .modal__container .modal__dialog {
@@ -460,6 +483,29 @@
 
 .card.card--compact .card__container .card__footer .card__author .card__author-avatar {
   @apply w-5 h-5
+}
+
+/* Dropdown Hook */
+.dropdown-hook {
+  @apply relative text-left my-1 w-28
+}
+
+.dropdown-hook .dropdown-hook__input {
+  @apply z-0 h-8 inline-flex justify-between items-center w-full cursor-default  border --gray-border-element bg-white --accent-rounded focus:outline-none transition-colors
+}
+
+.dropdown-hook .dropdown-hook__input__field {
+  @apply pr-1 pl-8 py-0.5 capitalize text-sm --minor-text-color cursor-default text-center outline-none w-full bg-transparent
+}
+
+.dropdown-hook .dropdown-hook__input__icon {
+  @apply mr-2 ml-2 h-6 w-6 --minor-text-color
+}
+.dropdown-hook .dropdown-hook__items {
+  @apply --accent-rounded absolute top-8 w-full bg-white transition-all duration-200 ease-linear mt-1 shadow
+}
+.dropdown-hook .dropdown-hook__items .dropdown-hook__item {
+  @apply capitalize text-center hover:text-red-500 hover:bg-gray-100 cursor-default --minor-text-color block px-4 py-2
 }
 
 /* Dropdown */

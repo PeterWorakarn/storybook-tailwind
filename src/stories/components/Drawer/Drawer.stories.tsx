@@ -17,6 +17,16 @@ export default {
       options: [PlacementType.BOTTOM, PlacementType.LEFT, PlacementType.RIGHT],
       control: { type: 'select' }
     },
+    header: {
+      name: 'Header',
+      defaultValue: 'This is Header',
+      control: { type: 'text' }
+    },
+    isCloseButton: {
+      name: 'Close Btn',
+      defaultValue: false,
+      control: { type: 'boolean' }
+    }
   }
 };
 
@@ -26,10 +36,10 @@ export const CustomDrawer = (args: any) => {
     <>
       <Button
         label="Drawer"
-        variant={VariantType.TERTIARY}
+        variant={VariantType.SECONDARY}
         onClick={() => setDrawer(true)}
       />
-      <Drawer {...args} visible={drawer} onCancle={() => setDrawer(false)} />
+      <Drawer {...args} visible={drawer} onClose={() => setDrawer(false)} />
     </>
   )
 }
