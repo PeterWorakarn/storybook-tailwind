@@ -1,4 +1,5 @@
 # TODO 
+// https://kimia-ui.vercel.app/
 // https://vercel.com/design/button
 // https://opensource.adobe.com/spectrum-web-components/components/button/
 ### Components 
@@ -24,17 +25,18 @@
 - [x] Borderless Card (like sem rush) ✅
 - [x] Compact Card (like peter h work) ✅
 - [x] Digital ID ✅
-- [x] Circular Progress ✅ // TODO: need to refactor in simple way
-- [ ] Accordian //
-- [ ] Drawer //
+- [x] Circular Progress ✅
+- [x] Accordian ✅
+- [x] Drawer ✅ 
 - [x] Skew Card https://codepen.io/victorwork/pen/OEGKrP // separate skew card from normal card ✅
+- [ ] Code Block //
+- [ ] Scroll spy //
+- [ ] Code Editor
 - [ ] Progress bar
 - [ ] Typing page
-- [ ] Scroll spy
 - [ ] Tab bar
 - [ ] Typo Badges https://tailwind-elements.com/docs/standard/components/badges/
 - [ ] PaginatedTable
-- [ ] Code Editor
 - [ ] Dropdown with Search
 - [ ] Progress bar
 - [ ] Dark mode
@@ -46,7 +48,7 @@
 - [ ] Call to Action (like datayolk, like ahancer)
 ### Layout 
 - [x] Mansonry ✅ https://beanthemes.com/masonry-css/ https://justjavascript.com/
-- [ ] Carousal
+- [ ] Carousal //
 ### Page 
 - [ ] Single Blog
 - [ ] Archive
